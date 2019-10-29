@@ -15,6 +15,11 @@ class CreateUserDetailsTable extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->string('no_telp', 15);
+            $table->string('alamat');
+            $table->string('thumbnai');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

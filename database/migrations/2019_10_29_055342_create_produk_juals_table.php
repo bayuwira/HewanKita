@@ -15,6 +15,19 @@ class CreateProdukJualsTable extends Migration
     {
         Schema::create('produk_juals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nama');
+            $table->string('slug');
+            $table->text('deskripsi');
+            $table->string('thumbnail');
+            $table->string('no_telp', 15);
+            $table->bigInteger('harga_jual');
+            $table->bigInteger('harga_beli');
+            $table->tinyInteger('diskon');
+            $table->integer('stok');
+            $table->string('lokasi');
+            $table->enum('kondisi', ['baru', 'bekas']);
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('produk_kategori_id')->unsigned();
             $table->timestamps();
         });
     }
