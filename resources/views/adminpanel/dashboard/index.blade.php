@@ -18,7 +18,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <div class="info-box">
                     <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
 
@@ -31,7 +31,7 @@
                 <!-- /.info-box -->
             </div>
             <!-- /.col -->
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <div class="info-box mb-3">
                     <span class="info-box-icon bg-success elevation-1"><i class="fas fa-crown"></i></span>
 
@@ -45,7 +45,7 @@
             </div>
             <!-- /.col -->
             <!-- /.col -->
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <div class="info-box mb-3">
                     <span class="info-box-icon bg-light elevation-1"><i class="fas fa-th-list"></i></span>
 
@@ -59,7 +59,7 @@
             </div>
             <!-- /.col -->
             <!-- /.col -->
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <div class="info-box mb-3">
                     <span class="info-box-icon bg-info elevation-1"><i class="fas fa-history"></i></span>
 

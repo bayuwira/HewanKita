@@ -10,5 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function(){
+    return view('landing.home.index');
+})->name('landing.home.index');
 
-Route::get('/', 'Admin\DashboardController@index')->name('adminpanel.dashboard.index');
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/control-panel', 'Admin\DashboardController@index')->name('adminpanel.dashboard.index');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
