@@ -53,6 +53,47 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-box-open"></i>
+                        <p>
+                            Produk
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('adminpanel.produk.create') }}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Tambah</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('adminpanel.produk.index') }}" class="nav-link">
+                                <i class="fas fa-list nav-icon"></i>
+                                <p>Lihat</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tags"></i>
+                        <p>
+                            Kategori
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('adminpanel.kategori.produk.index') }}" class="nav-link">
+                                <i class="fas fa-tag nav-icon"></i>
+                                <p>Produk</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>

@@ -16,7 +16,31 @@ Route::get('/', function(){
 
 
 Route::group(['middleware' => ['auth']], function(){
-    Route::get('/control-panel', 'Admin\DashboardController@index')->name('adminpanel.dashboard.index');
+    $urlAdmin = '/control-panel';
+
+    Route::get($urlAdmin, 'Admin\DashboardController@index')->name('adminpanel.dashboard.index');
+    
+    Route::resource($urlAdmin . '/produk', 'Admin\ProdukController')->names([
+        'index' => 'adminpanel.produk.index',
+        'create' => 'adminpanel.produk.create',
+        'store' => 'adminpanel.produk.store',
+        'edit' => 'adminpanel.produk.edit',
+        'update' => 'adminpanel.produk.update',
+        'destroy' => 'adminpanel.produk.destroy'
+    ])->except([
+        'show'
+    ]);
+
+    Route::resource($urlAdmin . '/kategori/produk', 'Admin\ProdukKategoriController')->names([
+        'index' => 'adminpanel.kategori.produk.index',
+        'create' => 'adminpanel.kategori.produk.create',
+        'store' => 'adminpanel.kategori.produk.store',
+        'edit' => 'adminpanel.kategori.produk.edit',
+        'update' => 'adminpanel.kategori.produk.update',
+        'destroy' => 'adminpanel.kategori.produk.destroy'
+    ])->except([
+        'show'
+    ]);
 });
 
 Auth::routes();

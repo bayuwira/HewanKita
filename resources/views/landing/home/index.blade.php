@@ -221,7 +221,7 @@
 
 		<section id="footer">
 			<div class="container">
-				<h5 class="text-center text-white">HewanKita.com dibuat oleh kelompok 2 dengan ❤️</h5>
+				<h5 class="text-center text-white">HewanKita.com dibuat oleh kelompok 1 dengan ❤️</h5>
 			</div>
 		</section>
 
