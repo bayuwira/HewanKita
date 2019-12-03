@@ -19,21 +19,37 @@
     <div class="container-fluid">
         <div class="card card-info card-outline">
             <div class="card-body">
-                <table class="table">
+                <table class="table table-bordered table-striped datatables">
                     <thead>
-                        <th>No</th>
-                        <th>Nama</th>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Aksi</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        @foreach ($produk_kategori as $index => $item)
-                            <tr>
-                                <td>{{ $index+1 }}</td>
-                                <td>{{ $item->nama }}</td>
-                            </tr>
-                        @endforeach
+
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.datatables').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('adminpanel.kategori.produk.data') }}",
+                columns: [
+                    {'data': 'DT_RowIndex'},
+                    {'data': 'nama'},
+                    {'data': 'aksi', orderable: false, searchable: false}
+                ]
+            });
+        });
+    </script>
 @endsection

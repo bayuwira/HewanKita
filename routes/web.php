@@ -31,7 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
         ])->except([
             'show'
         ]);
-
+        Route::get($urlAdmin.'/kategori/produk/data', 'Admin\ProdukKategoriController@data')->name('adminpanel.kategori.produk.data');
         Route::resource($urlAdmin . '/kategori/produk', 'Admin\ProdukKategoriController')->names([
             'index' => 'adminpanel.kategori.produk.index',
             'create' => 'adminpanel.kategori.produk.create',
@@ -48,3 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/siap', function () {
+//     return human_file_size(1024*1024);
+// });
