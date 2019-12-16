@@ -85,7 +85,7 @@
                             </div> <!-- row.// -->
                             <hr>
                             <a href="#" class="btn btn-lg btn-hewankita text-uppercase"> Beli sekarang </a>
-                            <a href="#" class="btn btn-lg btn-hewankita text-uppercase"> <i class="fas fa-shopping-cart"></i> </a>
+                            <a href="{{ Route('landing.cart') }}" class="btn btn-lg btn-hewankita text-uppercase"> <i class="fas fa-shopping-cart"></i> </a>
                         </article> <!-- card-body.// -->
                     </aside> <!-- col.// -->
                 </div> <!-- row.// -->

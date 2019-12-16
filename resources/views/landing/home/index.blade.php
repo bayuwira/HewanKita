@@ -86,6 +86,75 @@
 <section id="forum">
     <div class="container">
         <div class="second-textcolor text-center">
+            <h2>PERLENGKAPAN HEWAN</h2>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Makanan Mencit</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Makanan Anjing</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                            magni
+                            sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Makanan Kelinci</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Makanan Kodok</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                            magni
+                            sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+            <a href="{{ Route('landing.product') }}" class="btn btn-mid">SAYA BUTUH YANG LAIN</a>
+        </div>
+</section>
+<section id="forum">
+    <div class="container">
+        <div class="second-textcolor text-center">
             <h2>FORUM TERBAIK</h2>
         </div>
         <div class="row text-center">

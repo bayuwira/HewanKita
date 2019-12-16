@@ -28,7 +28,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
