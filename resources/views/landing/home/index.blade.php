@@ -29,7 +29,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                    <a href="{{ Route('landing.advertise') }}" class="btn btn-hewankita">SAYA MAU !</a>
+                    <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -73,13 +73,13 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="text-center">
-            <a href="ads.html" class="btn btn-mid">SAYA MAU YANG LAIN</a>
+            <a href="{{ Route('landing.advertise') }}" class="btn btn-mid">SAYA MAU YANG LAIN</a>
         </div>
     </div>
 </section>
