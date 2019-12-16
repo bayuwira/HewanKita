@@ -1,232 +1,253 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-		<link rel="stylesheet" href="{{ asset('css/main.css') }}">
-		<title>HewanKita.com</title>
-	</head>
-	<body>
-		<section id="navbar">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="navbar-brand" href="#">HewanKita.com</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+@extends('landing.app')
+@section('content')
+<header class="bg-middleware text-black-50">
+    <div class="container text-center header-container">
+        <h1 class="main-textcolor">SELAMAT DATANG HEWAN<span id="kita">KITA.COM</span></h1>
+        <p class="lead main-textcolor">Sebuah Website yang menghubungkan anda dengan seluruh fauna di dunia !</p>
+        <div class="row animal-header">
+            <a href=""><i class="fas fa-dog"></i></a>
+            <a href=""><i class="fas fa-cat"></i></a>
+            <a href=""><i class="fas fa-crow"></i></a>
+            <a href=""><i class="fas fa-fish"></i></a>
+            <a href=""><i class="fas fa-spider"></i></a>
+            <a href=""><i class="fas fa-otter"></i></a>
+        </div>
+    </div>
+</header>
+<section id="pets-need">
+    <div class="container">
+        <div class="second-textcolor text-center">
+            <h2>MEREKA BUTUH KAMU</h2>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Anjing</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque.</p>
+                    </div>
+                    <div class="card-footer">
+                    <a href="{{ Route('landing.advertise') }}" class="btn btn-hewankita">SAYA MAU !</a>
+                    </div>
+                </div>
+            </div>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-direction: row-reverse">
-					<ul class="navbar-nav mr-left">
-						<li>
-							<a class="nav-link" href="{{ route('login') }}">Login</a>
-						</li>
-						<li>
-							<a class="btn btn-primary ml-3 btn-register" href="{{ route('register') }}" role="button">Daftar</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</section>
-		<section id="hero">
-			<div class="container-fluid">
-				<div class="row hero-container">
-					<div class="col-md-6">
-						<ul class="list-inline list-category">
-							<li class="list-inline-item dropdown">
-								<a class="nav-link dropdown-toggle" style="padding-left: 0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Semua Kategori
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Mamalia</a>
-									<a class="dropdown-item" href="#">Unggas</a>
-									<a class="dropdown-item" href="#">Reptile</a>
-									<a class="dropdown-item" href="#">Diet Hewan</a>
-								</div>
-							</li>
-							<li class="list-inline-item">
-									<a class="nav-link" href="#">Mamalia</a>
-							</li>
-							<li class="list-inline-item">
-									<a class="nav-link" href="#">Unggas</a>
-							</li>
-							<li class="list-inline-item">
-									<a class="nav-link" href="#">Reptile</a>
-							</li>
-							<li class="list-inline-item">
-									<a class="nav-link" href="#">Diet Hewan</a>
-							</li>
-						</ul>
-						
-						<div class="pencarian">
-							<h2>Semua solusi permasalahan Hewan</h2>
-							<h2>Anda ada pada kami!</h2>
-							<input class="form-control" type="search" placeholder="Temukan hewan peliharaan, makanan dan lainnya..." aria-label="Search">
-							<button class="btn btn-primary mt-2" type="submit">Cari</button>
-						</div>
-					</div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Anjing</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                            magni
+                            sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                    </div>
+                </div>
+            </div>
 
-					<div class="col-md-6 hero-img d-none d-lg-block"></div>
-				</div>
-			</div>
-		</section>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Anjing</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                    </div>
+                </div>
+            </div>
 
-		<section id="hewan">
-			<div class="container">
-				<h2 class="text-title">Hewan <br>yang butuh kamu</h2>
-				<div class="row">
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Anjing</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                            magni
+                            sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ads_detail.html" class="btn btn-hewankita">SAYA MAU !</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="ads.html" class="btn btn-mid">SAYA MAU YANG LAIN</a>
+        </div>
+    </div>
+</section>
+<section id="forum">
+    <div class="container">
+        <div class="second-textcolor text-center">
+            <h2>FORUM TERBAIK</h2>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Forum Reptile</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-hewankita">TAMPILKAN</a>
+                    </div>
+                </div>
+            </div>
 
-				<div class="text-center">
-					<a href="#" class="btn btn-primary">Lihat lebih banyak</a>
-				</div>
-			</div>
-		</section>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Forum Mammalia</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                            magni
+                            sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-hewankita">TAMPILKAN</a>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Forum Unggas</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-hewankita">TAMPILKAN</a>
+                    </div>
+                </div>
+            </div>
 
-		<section id="footer">
-			<div class="container">
-				<h5 class="text-center text-white">HewanKita.com dibuat oleh kelompok 1 dengan ❤️</h5>
-			</div>
-		</section>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Forum Amphibi</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+                            magni
+                            sapiente, tempore debitis beatae culpa natus architecto.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-hewankita">TAMPILKAN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="team">
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <h2>Tim Developer</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+                    </div>
+                    <div class="team-content">
+                        <h3>Bayu Wira</h3>
+                        <span class="post"> Front End Developer </span>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" class="fab fa-facebook"></a></li>
+                        <li><a href="" class="fab fa-twitter"></a></li>
+                        <li><a href="" class="fab fa-google-plus"></a></li>
+                        <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+                    </div>
+                    <div class="team-content">
+                        <h3>Rama Suryananda</h3>
+                        <span class="post"> Front End Developer </span>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" class="fab fa-facebook"></a></li>
+                        <li><a href="" class="fab fa-twitter"></a></li>
+                        <li><a href="" class="fab fa-google-plus"></a></li>
+                        <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
 
-		<script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
-		<script src="{{ asset('js/popper.min.js') }}"></script>
-		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-	</body>
-</html>
+                    </div>
+                    <div class="team-content">
+                        <h3>Giri Kusuma</h3>
+                        <span class="post"> Front End Developer </span>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" class="fab fa-facebook"></a></li>
+                        <li><a href="" class="fab fa-twitter"></a></li>
+                        <li><a href="" class="fab fa-google-plus"></a></li>
+                        <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="row section-team">
+        <div class="col-md-6 col-sm-6 team-manager">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+
+                </div>
+                <div class="team-content">
+                    <h3>Agus Wahyu</h3>
+                    <span class="post"> Full Stack Developer </span>
+                </div>
+                <ul class="social">
+                    <li><a href="" class="fab fa-facebook"></a></li>
+                    <li><a href="" class="fab fa-twitter"></a></li>
+                    <li><a href="" class="fab fa-google-plus"></a></li>
+                    <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+
+                </div>
+                <div class="team-content">
+                    <h3>Dharma Putra</h3>
+                    <span class="post"> Back End Developer </span>
+                </div>
+                <ul class="social">
+                    <li><a href="" class="fab fa-facebook"></a></li>
+                    <li><a href="" class="fab fa-twitter"></a></li>
+                    <li><a href="" class="fab fa-google-plus"></a></li>
+                    <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> 
+@endsection
