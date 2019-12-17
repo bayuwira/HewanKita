@@ -149,8 +149,8 @@
         </div>
     </div>
     <div class="text-center">
-            <a href="{{ Route('landing.product') }}" class="btn btn-mid">SAYA BUTUH YANG LAIN</a>
-        </div>
+        <a href="{{ Route('landing.product') }}" class="btn btn-mid">SAYA BUTUH YANG LAIN</a>
+    </div>
 </section>
 <section id="forum">
     <div class="container">
@@ -217,6 +217,9 @@
             </div>
         </div>
     </div>
+    <div class="text-center">
+        <a href="{{ Route('landing.forum') }}" class="btn btn-mid">FORUM</a>
+    </div>
 </section>
 <section id="team">
     <div class="container">
@@ -262,7 +265,6 @@
                 <div class="our-team">
                     <div class="pic">
                         <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
-
                     </div>
                     <div class="team-content">
                         <h3>Giri Kusuma</h3>

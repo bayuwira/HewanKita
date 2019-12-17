@@ -16,6 +16,7 @@ Route::get('/iklan_detail', 'landing\AdvertiseController@show')->name('landing.a
 Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
 Route::get('/produk_detail', 'landing\ProductController@show')->name('landing.product.detail');
+Route::get('/forum', 'landing\ForumController@index')->name('landing.forum');
 
 
 
