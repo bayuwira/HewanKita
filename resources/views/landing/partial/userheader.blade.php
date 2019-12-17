@@ -13,13 +13,16 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ Route('login') }}">Login</a>
+                            <a class="nav-link" href="{{ Route('login') }}"><i class="fas fa-user"></i> Halo, user</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ Route('register') }}">Daftar</a>
+                        <a class="nav-link" href="{{ Route('register') }}"><i class="fas fa-comments"></i> Komentar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ Route('login') }}"> <i class="fas fa-camera"></i> Buat Iklan</a>
+                            <a class="nav-link" href=""> <i class="fas fa-journal-whills"></i> Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=""> <i class="fas fa-camera"></i> Buat Iklan</a>
                         </li>
                     </ul>
                 </div>

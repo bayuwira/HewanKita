@@ -15,7 +15,7 @@
                             <h1 class="my-3">Anjing Kintamani</h1>
                             <h2>Rp 150.000</h2>
                             <h4>Singaraja, Denpasar</h4>
-                            <button class="btn btn-hubungi">Hubungi Penjual</button>
+                            <button type="button" class="btn btn-hubungi" data-toggle="modal" data-target="#exampleModal" >Hubungi Penjual</button>
                         </div>
                     </div>
                 </div>
