@@ -1,6 +1,6 @@
 @extends('landing.app')
 @section('content')
-     <section id="ads-detail">
+    <section id="ads-detail">
         <div class="container">
             <div class="row">
                 <div class="col-md-10">
@@ -52,13 +52,13 @@
                 <div class="col-md-2 recomendation-container">
                     <h4>Lihat Ini Juga</h4>
                     <div class="recomendation">
-                        <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+                        <a href="{{ Route('landing.advertise.detail')}}"> <img class="img-fluid" src="http://placehold.it/750x500" alt=""></a>    
                     </div>
                     <div class="recomendation">
-                        <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+                        <a href="{{ Route('landing.advertise.detail')}}"> <img class="img-fluid" src="http://placehold.it/750x500" alt=""></a>    
                     </div>
                     <div class="recomendation">
-                        <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+                        <a href="{{ Route('landing.advertise.detail')}}"> <img class="img-fluid" src="http://placehold.it/750x500" alt=""></a>    
                     </div>
                 </div>
             </div>

@@ -18,7 +18,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('adminpanel.dashboard.index');
+            if(Auth::user()->hak_akses === 1){
+                return redirect()->route('adminpanel.dashboard.index');
+            }else{
+                return redirect()->route('landing.home');
+            }
         }
 
         return $next($request);

@@ -17,6 +17,7 @@ Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
 Route::get('/produk_detail', 'landing\ProductController@show')->name('landing.product.detail');
 Route::get('/forum', 'landing\ForumController@index')->name('landing.forum');
+Route::get('/forum_detail', 'landing\ForumController@show')->name('landing.forum.detail');
 
 
 

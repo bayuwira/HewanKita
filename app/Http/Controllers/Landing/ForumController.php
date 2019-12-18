@@ -11,4 +11,8 @@ class ForumController extends Controller
     {
         return view('landing.forum.index');
     }
+    public function show()
+    {
+        return view('landing.forum.show');
+    }
 }

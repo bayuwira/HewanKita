@@ -37,5 +37,13 @@ class LoginController extends Controller
         
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectTo(){
+        if (Auth::user()->hak_akses === 1) {
+            return redirect()->route('adminpanel.dashboard.index');
+        } else {
+            return redirect()->route('landing.home');
+        }
+    }
     
 }
