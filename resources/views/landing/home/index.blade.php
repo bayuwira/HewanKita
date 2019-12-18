@@ -1,232 +1,266 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-		<link rel="stylesheet" href="{{ asset('css/main.css') }}">
-		<title>HewanKita.com</title>
-	</head>
-	<body>
-		<section id="navbar">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="navbar-brand" href="#">HewanKita.com</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+@extends('landing.app')
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-direction: row-reverse">
-					<ul class="navbar-nav mr-left">
-						<li>
-							<a class="nav-link" href="{{ route('login') }}">Login</a>
-						</li>
-						<li>
-							<a class="btn btn-primary ml-3 btn-register" href="{{ route('register') }}" role="button">Daftar</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</section>
-		<section id="hero">
-			<div class="container-fluid">
-				<div class="row hero-container">
-					<div class="col-md-6">
-						<ul class="list-inline list-category">
-							<li class="list-inline-item dropdown">
-								<a class="nav-link dropdown-toggle" style="padding-left: 0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Semua Kategori
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Mamalia</a>
-									<a class="dropdown-item" href="#">Unggas</a>
-									<a class="dropdown-item" href="#">Reptile</a>
-									<a class="dropdown-item" href="#">Diet Hewan</a>
-								</div>
-							</li>
-							<li class="list-inline-item">
-									<a class="nav-link" href="#">Mamalia</a>
-							</li>
-							<li class="list-inline-item">
-									<a class="nav-link" href="#">Unggas</a>
-							</li>
-							<li class="list-inline-item">
-									<a class="nav-link" href="#">Reptile</a>
-							</li>
-							<li class="list-inline-item">
-									<a class="nav-link" href="#">Diet Hewan</a>
-							</li>
-						</ul>
-						
-						<div class="pencarian">
-							<h2>Semua solusi permasalahan Hewan</h2>
-							<h2>Anda ada pada kami!</h2>
-							<input class="form-control" type="search" placeholder="Temukan hewan peliharaan, makanan dan lainnya..." aria-label="Search">
-							<button class="btn btn-primary mt-2" type="submit">Cari</button>
+@section('content')
+	<nav class="navbar navbar-expand-lg navbar-light bg-white" style="backgoround-color: white !important;">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#">HEWANKITA.COM</a>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<form class="form-inline my-2 my-lg-0 form-panjang">
+						<div class="input-group mb-3 nav-cari">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">cari</span>
+							</div>
+							<input type="text" class="form-control cari-input" placeholder="Cari hewan atau perlengkapannya" aria-label="Cari" aria-describedby="basic-addon1">
 						</div>
-					</div>
+					</form>
+				</li>
+			</ul>
+			<ul class="nav justify-content-end">
+				{{-- <li class="nav-item active">
+					<a class="nav-link" style="color: #45454d;" href="#">Admin <span class="sr-only">(current)</span></a>
+				</li> --}}
 
-					<div class="col-md-6 hero-img d-none d-lg-block"></div>
+				<li class="nav-item active">
+					<a class="nav-link" style="color: #45454d;" href="#">Pengguna baru? Daftar <span class="sr-only">(current)</span></a>
+				</li>
+				{{-- <li class="nav-item">
+					<a class="nav-link" style="color: #45454d;" href="app/actions/logout.php">Logout</a>
+				</li> --}}
+				<li class="nav-item">
+					<a class="nav-link" style="color: #45454d;" href="login.php">Masuk</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="btn btn-secondary btn-md disabled" style="background-color: #ffd5d5; color: #45454d; border: 0px;" tabindex="-1" role="button" aria-disabled="true">Iklan</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<ul class="nav justify-content-center kategori-hewan" style="background-color: white; border-top: 2px solid; border-color: #f2f2f2;">
+		<li class="nav-item">
+			<a class="nav-link active" href="#">Reptile</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Unggas</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Mamalia</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link active" href="#">Ikan</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Perlengkapan</a>
+		</li>
+	</ul>
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid rekomendasi-populer">
+			<div class="rekomendasi-populer-content">
+				<h3 style="color: #fc7fb2">Teropuler</h3>
+			</div>
+			<div class="rekomendasi-populer-gambar">
+				<ul class="nav justify-content-center">
+					<li class="nav-item-gambar">
+						<img src="{{ asset('img/1.png') }}" alt="">
+						<h5 align="center" style="color: #fc7fb2">Kelinci</h5>
+					</li>
+					<li class="nav-item-gambar">
+						<img src="{{ asset('img/1.png') }}" alt="">
+						<h5 align="center" style="color: #fc7fb2">Kelinci</h5>
+					</li>
+					<li class="nav-item-gambar">
+						<img src="{{ asset('img/1.png') }}" alt="">
+						<h5 align="center" style="color: #fc7fb2">Kelinci</h5>
+					</li>
+					<li class="nav-item-gambar">
+						<img src="{{ asset('img/1.png') }}" alt="">
+						<h5 align="center" style="color: #fc7fb2">Kelinci</h5>
+					</li>
+					<li class="nav-item-gambar">
+						<img src="{{ asset('img/1.png') }}" alt="">
+						<h5 align="center" style="color: #fc7fb2">Kelinci</h5>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container rekomendasi-content">
+			<h2 class="text-title" style="color: #45454d">Rekomendasi</h2>
+			<div class="row">
+				<div class="col-lg-3 col-md-4">
+					<a href="#">
+						<div class="card">
+							<div class="card-img-top">
+								<div class="card" style="border: 2px solid; border-color: #f2f2f2; margin: 7%;">
+									<h5 style="color: #45454d; margin-left: 6px;">Rp. 10.000</h5>
+									<img src="{{ asset('img/1.png') }}">
+								</div>
+							</div>
+							<div class="card-body" align="left">
+								<div class="blog-card-title">
+									<h4 class="form-text">Kucing Persia</h4>
+								</div>
+								<div class="blog-card-foot">
+									<small class="form-text text-muted">by hewankita.com</small>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-4">
+					<a href="#">
+						<div class="card">
+							<div class="card-img-top">
+								<div class="card" style="border: 2px solid; border-color: #f2f2f2; margin: 7%;">
+									<h5 style="color: #45454d; margin-left: 6px;">Rp. 10.000</h5>
+									<img src="{{ asset('img/1.png') }}">
+								</div>
+							</div>
+							<div class="card-body" align="left">
+								<div class="blog-card-title">
+									<h4 class="form-text">Kucing Persia</h4>
+								</div>
+								<div class="blog-card-foot">
+									<small class="form-text text-muted">by hewankita.com</small>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-4">
+					<a href="#">
+						<div class="card">
+							<div class="card-img-top">
+								<div class="card" style="border: 2px solid; border-color: #f2f2f2; margin: 7%;">
+									<h5 style="color: #45454d; margin-left: 6px;">Rp. 10.000</h5>
+									<img src="{{ asset('img/1.png') }}">
+								</div>
+							</div>
+							<div class="card-body" align="left">
+								<div class="blog-card-title">
+									<h4 class="form-text">Kucing Persia</h4>
+								</div>
+								<div class="blog-card-foot">
+									<small class="form-text text-muted">by hewankita.com</small>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-4">
+					<a href="#">
+						<div class="card">
+							<div class="card-img-top">
+								<div class="card" style="border: 2px solid; border-color: #f2f2f2; margin: 7%;">
+									<h5 style="color: #45454d; margin-left: 6px;">Rp. 10.000</h5>
+									<img src="{{ asset('img/1.png') }}">
+								</div>
+							</div>
+							<div class="card-body" align="left">
+								<div class="blog-card-title">
+									<h4 class="form-text">Kucing Persia</h4>
+								</div>
+								<div class="blog-card-foot">
+									<small class="form-text text-muted">by hewankita.com</small>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-4">
+					<a href="#">
+						<div class="card">
+							<div class="card-img-top">
+								<div class="card" style="border: 2px solid; border-color: #f2f2f2; margin: 7%;">
+									<h5 style="color: #45454d; margin-left: 6px;">Rp. 10.000</h5>
+									<img src="{{ asset('img/1.png') }}">
+								</div>
+							</div>
+							<div class="card-body" align="left">
+								<div class="blog-card-title">
+									<h4 class="form-text">Kucing Persia</h4>
+								</div>
+								<div class="blog-card-foot">
+									<small class="form-text text-muted">by hewankita.com</small>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-4">
+					<a href="#">
+						<div class="card">
+							<div class="card-img-top">
+								<div class="card" style="border: 2px solid; border-color: #f2f2f2; margin: 7%;">
+									<h5 style="color: #45454d; margin-left: 6px;">Rp. 10.000</h5>
+									<img src="{{ asset('img/1.png') }}">
+								</div>
+							</div>
+							<div class="card-body" align="left">
+								<div class="blog-card-title">
+									<h4 class="form-text">Kucing Persia</h4>
+								</div>
+								<div class="blog-card-foot">
+									<small class="form-text text-muted">by hewankita.com</small>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-4">
+					<a href="#">
+						<div class="card">
+							<div class="card-img-top">
+								<div class="card" style="border: 2px solid; border-color: #f2f2f2; margin: 7%;">
+									<h5 style="color: #45454d; margin-left: 6px;">Rp. 10.000</h5>
+									<img src="{{ asset('img/1.png') }}">
+								</div>
+							</div>
+							<div class="card-body" align="left">
+								<div class="blog-card-title">
+									<h4 class="form-text">Kucing Persia</h4>
+								</div>
+								<div class="blog-card-foot">
+									<small class="form-text text-muted">by hewankita.com</small>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-4">
+					<a href="#">
+						<div class="card">
+							<div class="card-img-top">
+								<div class="card" style="border: 2px solid; border-color: #f2f2f2; margin: 7%;">
+									<h5 style="color: #45454d; margin-left: 6px;">Rp. 10.000</h5>
+									<img src="{{ asset('img/1.png') }}">
+								</div>
+							</div>
+							<div class="card-body" align="left">
+								<div class="blog-card-title">
+									<h4 class="form-text">Kucing Persia</h4>
+								</div>
+								<div class="blog-card-foot">
+									<small class="form-text text-muted">by hewankita.com</small>
+								</div>
+							</div>
+						</div>
+					</a>
 				</div>
 			</div>
-		</section>
 
-		<section id="hewan">
-			<div class="container">
-				<h2 class="text-title">Hewan <br>yang butuh kamu</h2>
-				<div class="row">
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-4">
-						<a href="#">
-							<div class="card">
-								<div class="card-img-top">
-									<img src="{{ asset('img/hero.jpg') }}">
-								</div>	
-								<div class="card-body"  align="left">
-									<div class="blog-card-title">
-										<h4 class="form-text">Kucing Persia</h4>
-									</div>
-									<div class="blog-card-foot">
-										<small class="form-text text-muted">by hewankita.com</small>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="text-center">
-					<a href="#" class="btn btn-primary">Lihat lebih banyak</a>
-				</div>
+			<div class="text-center">
+				<a href="#" class="btn btn-primary" style="background-color: #45454d; border: 0px;">Lihat lebih banyak</a>
 			</div>
-		</section>
-
-
-		<section id="footer">
-			<div class="container">
-				<h5 class="text-center text-white">HewanKita.com dibuat oleh kelompok 1 dengan ❤️</h5>
-			</div>
-		</section>
-
-		<script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
-		<script src="{{ asset('js/popper.min.js') }}"></script>
-		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-	</body>
-</html>
+			<br>
+		</div>
+	</div>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h4 align="center">Dibuat dengan cinta</h4>
+		</div>
+	</div>
+@endsection
