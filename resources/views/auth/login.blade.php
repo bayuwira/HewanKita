@@ -2,7 +2,7 @@
 
 @section('content')
 <center>
-    <div class="form-regis" style="background-color: white; margin-top: 100px; width: 500px; padding: 30px 30px;">
+    <div class="form-regis" style="background-color: white; margin-top: 120px; width: 500px; padding: 40px 40px;">
         <h2 style="font-size: 20px;">HEWAN<span style="color: #FC7FB2;">KITA.COM</span></h2><br>
         <div id="show-message"></div>
         <form action="{{ route('login') }}" method="post" id="form-login">
@@ -17,12 +17,12 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" class="form-control">
             </div>
-            <div class="tombol">
-                <button>Login</button>
+            <div class="form-group">
+                <button class="btn btn-hewankita">Login</button>
             </div>
         </form>
     </div><br>
-    <p>Don't Have an account? <span><a href="register.php" style="color: #FC7FB2;">Register now</a></span></p>
+    <p>Don't Have an account? <span><a href="{{ route('login') }}" style="color: #FC7FB2;">Register now</a></span></p>
 </center>
 @endsection
 
@@ -52,7 +52,13 @@
                     method: 'POST',
                     dataType: 'json',
                     success: function(data){
-                        console.log(data);
+                        if(data.error === true){
+                            $('#show-message').html(
+                                alert(data.message, 'danger')
+                            ).hide().fadeIn(1000);
+                        }else{
+                            window.location = data.message;
+                        }
                     },
                     error: function(data){
 
@@ -74,7 +80,7 @@
                             listError += '</ul>';
 
                             $('#show-message').html(
-                                alert(listError, 'warning')
+                                alert(listError, 'danger')
                             ).hide().fadeIn(1000);
                         }else{
                             

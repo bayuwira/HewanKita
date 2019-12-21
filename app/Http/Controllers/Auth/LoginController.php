@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -34,6 +36,31 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectTo(){
+        if (Auth::user()->hak_akses === 1) {
+            return redirect()->route('adminpanel.dashboard.index');
+        } else {
+            return redirect()->route('landing.home');
+        }
+    }
+
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        return $this->authenticated($request, $this->guard()->user()) ? response()->json([
+            'error' => true,
+            'message' => 'Anda sudah login'
+        ]) : response()->json([
+            'error' => false,
+            'message' => (Auth::user()->hak_akses === 1) ? route('adminpanel.dashboard.index') : route('landing.home')
+        ]);
+    }
+    
 }

@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/control-panel';
+    // protected $redirectTo = '/control-panel';
 
     /**
      * Create a new controller instance.
@@ -68,5 +68,24 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        if(Auth::user()->hak_akses == 1 ){
+            return redirect()->route('adminpanel.dashboard.index');
+        }
+        else{
+            return redirect()->route('landing.home.index');
+        }
+    }
+
+    protected function redirectTo(Request $request, $user)
+    {
+        if (Auth::user()->hak_akses == 1) {
+            return redirect()->route('adminpanel.dashboard.index');
+        } else {
+            return redirect()->route('landing.home.index');
+        }
     }
 }

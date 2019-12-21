@@ -87,9 +87,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
+                            <a href="{{ route('adminpanel.kategori.produk.create') }}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Tambah</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('adminpanel.kategori.produk.index') }}" class="nav-link">
-                                <i class="fas fa-tag nav-icon"></i>
-                                <p>Produk</p>
+                                <i class="fas fa-list nav-icon"></i>
+                                <p>Lihat</p>
                             </a>
                         </li>
                     </ul>
