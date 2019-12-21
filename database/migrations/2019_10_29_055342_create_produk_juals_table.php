@@ -18,14 +18,14 @@ class CreateProdukJualsTable extends Migration
             $table->string('nama');
             $table->string('slug');
             $table->text('deskripsi');
-            $table->string('thumbnail');
+            $table->string('photo_thumbnail');
             $table->string('no_telp', 15);
             $table->bigInteger('harga_jual');
             $table->bigInteger('harga_beli');
             $table->tinyInteger('diskon');
             $table->integer('stok');
             $table->string('lokasi');
-            $table->enum('kondisi', ['baru', 'bekas']);
+            $table->enum('kondisi', ['1', '2','3']);
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('produk_kategori_id')->unsigned();
             $table->timestamps();

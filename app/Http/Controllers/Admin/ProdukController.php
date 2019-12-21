@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produk;
-
+use App\ProdukKategori;
+use DB;
 class ProdukController extends Controller
 {
     private $path = 'adminpanel.produk.';
@@ -26,7 +27,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        //
+        return view($this->path.'create',['KategoriProduk' => ProdukKategori::orderBy('nama','DESC')->get()]);
     }
 
     /**
@@ -37,7 +38,20 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::beginTransaction();
+        try{
+
+            DB::commit();
+            return redirect()
+                            ->route('admin.penilaian.create')
+                            ->with('toastr', toastr('Berhasil menambahkan data', 'success'));
+
+        }catch(Iluminate\Database\QueryException $e ){
+            DB::rollback();
+            return redirect()
+                    ->route('admin.penilaian.create')
+                    ->with('toastr', toastr('Gagal menambahkan data', 'error'));
+        }
     }
 
     /**
@@ -59,7 +73,11 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Produk::where('slug','=',$id)->firstOrFail();
+        return view($this->path.'edit',[
+            'title' => 'Edit Produk Jual',
+            'item' => $data 
+        ]);
     }
 
     /**

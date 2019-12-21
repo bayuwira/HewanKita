@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Auth;
 class LoginController extends Controller
 {
     /*
@@ -38,10 +38,13 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectTo(){
-        if (Auth::user()->hak_akses === 1) {
+    public function authenticated()
+    {
+        $user = Auth::user();
+        if($user->hak_akses == '1')
+        {
             return redirect()->route('adminpanel.dashboard.index');
-        } else {
+        } else{
             return redirect()->route('landing.home');
         }
     }

@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth']], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes(['verify' => true]);
 
 // Route::get('/siap', function () {
 //     return human_file_size(1024*1024);
