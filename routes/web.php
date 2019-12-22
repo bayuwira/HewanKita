@@ -13,6 +13,7 @@
 Route::get('/','landing\HomeController@index')->name('landing.home');
 Route::get('/iklan','landing\AdvertiseController@index')->name('landing.advertise');
 Route::get('/iklan_detail', 'landing\AdvertiseController@show')->name('landing.advertise.detail');
+Route::get('/iklan_tambah', 'landing\AdvertiseController@add')->name('landing.advertise.create');
 Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
 Route::get('/produk_detail', 'landing\ProductController@show')->name('landing.product.detail');

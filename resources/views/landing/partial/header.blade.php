@@ -34,14 +34,17 @@
                             <a class="nav-link" href=""> <i class="fas fa-journal-whills"></i> Forum</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=""> <i class="fas fa-camera"></i> Buat Iklan</a>
+                            <a class="nav-link" href="{{ Route('landing.advertise.create')}}"> <i class="fas fa-camera"></i> Buat Iklan</a>
                         </li>
                         <li class="nav-item dropdown-navbar">
                             <a class="nav-link" href="{{ Route('login') }}" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> Halo, {{ Auth::user()->name }} </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Forum</a>
                                 <a class="dropdown-item" href="#">Dashboard</a>
-                                <a class="dropdown-item" href="#">Keluar</a>
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                </form>
                             </div>
                         </li>
                     </ul>
