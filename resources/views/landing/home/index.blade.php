@@ -226,7 +226,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+                        <img src="img/bayu.jpg">
                     </div>
                     <div class="team-content">
                         <h3>Bayu Wira</h3>
@@ -243,7 +243,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+                        <img src="img/rama.jpg">
                     </div>
                     <div class="team-content">
                         <h3>Rama Suryananda</h3>
@@ -260,7 +260,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="our-team">
                     <div class="pic">
-                        <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+                        <img src="img/giri.jpg">
                     </div>
                     <div class="team-content">
                         <h3>Giri Kusuma</h3>
@@ -282,7 +282,7 @@
         <div class="col-md-6 col-sm-6 team-manager">
             <div class="our-team">
                 <div class="pic">
-                    <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+                    <img src="img/agus.jpg">
 
                 </div>
                 <div class="team-content">
@@ -300,7 +300,7 @@
         <div class="col-md-6 col-sm-6">
             <div class="our-team">
                 <div class="pic">
-                    <img src="https://bootsnipp.com/img/avatars/552882bc08538da46b0a8ede8b106e3668c80a42.jpg">
+                    <img src="img/dharma.jpg">
 
                 </div>
                 <div class="team-content">

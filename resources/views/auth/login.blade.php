@@ -22,7 +22,7 @@
             </div>
         </form>
     </div><br>
-    <p>Don't Have an account? <span><a href="{{ route('login') }}" style="color: #FC7FB2;">Register now</a></span></p>
+    <p>Don't Have an account? <span><a href="{{ route('register') }}" style="color: #FC7FB2;">Register now</a></span></p>
 </center>
 @endsection
 
