@@ -20,9 +20,10 @@ class CreateTransaksisTable extends Migration
             $table->tinyInteger('diskon');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('produk_jual_id')->unsigned();
+            $table->timestamps();
+            
             $table->foreign('produk_jual_id')->references('id')->on('produk_juals');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
         });
     }
 

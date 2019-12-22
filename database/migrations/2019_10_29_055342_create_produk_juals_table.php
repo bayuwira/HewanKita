@@ -24,8 +24,6 @@ class CreateProdukJualsTable extends Migration
             $table->bigInteger('harga_beli');
             $table->tinyInteger('diskon');
             $table->integer('stok');
-            $table->string('lokasi');
-            $table->enum('kondisi', ['1', '2','3']);
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('produk_kategori_id')->unsigned();
             $table->timestamps();

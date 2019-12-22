@@ -40,16 +40,16 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function authenticated()
-    {
-        $user = Auth::user();
-        if($user->hak_akses == '1')
-        {
-            return redirect()->route('adminpanel.dashboard.index');
-        } else{
-            return redirect()->route('landing.home');
-        }
-    }
+    // public function authenticated()
+    // {
+    //     $user = Auth::user();
+    //     if($user->hak_akses == '1')
+    //     {
+    //         return redirect()->route('adminpanel.dashboard.index');
+    //     } else{
+    //         return redirect()->route('landing.home');
+    //     }
+    // }
 
     protected function sendLoginResponse(Request $request)
     {

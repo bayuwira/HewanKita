@@ -88,9 +88,6 @@ class ProdukKategoriController extends Controller
      */
     public function edit($id)
     {
-<<<<<<< HEAD
-        // return view(this->path.'edit');
-=======
         $item = ProdukKategori::where('slug', '=', $id)->firstOrFail();
         
         $data = [
@@ -99,7 +96,6 @@ class ProdukKategoriController extends Controller
         ];
 
         return view($this->path . 'edit', $data);
->>>>>>> 0ae796c63394b0fb395bb3279501c524e8f0a43d
     }
 
     /**
@@ -159,7 +155,6 @@ class ProdukKategoriController extends Controller
                 ->route('adminpanel.kategori.produk.index')
                 ->with('toastr', toastr('Gagal menghapus data', 'error'));
         }
-
     }
     
     public function data(){

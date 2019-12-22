@@ -67,7 +67,7 @@
                         const { errors } = responseJSON;
 
 
-                        if(typeof(errors)){
+                        if(errors){
                             let errorsValue = Object.keys(errors).map(function(data){
                                 return errors[data][0];
                             });
@@ -83,7 +83,9 @@
                                 alert(listError, 'danger')
                             ).hide().fadeIn(1000);
                         }else{
-                            
+                            $('#show-message').html(
+                                alert(responseJSON.message, 'danger')
+                            ).hide().fadeIn(1000);
                         }
                     }
                 })

@@ -14,13 +14,13 @@ class CreateUserDetailsTable extends Migration
     public function up()
     {
         Schema::create('user_details', function (Blueprint $table) {
-            $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->string('no_telp', 15);
             $table->string('alamat');
             $table->string('thumbnail');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
