@@ -55,6 +55,29 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Pengguna
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('adminpanel.pengguna.create') }}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Tambah</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('adminpanel.pengguna.index') }}" class="nav-link">
+                                <i class="fas fa-list nav-icon"></i>
+                                <p>Lihat</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-box-open"></i>
                         <p>
                             Produk
@@ -99,6 +122,7 @@
                             </a>
                         </li>
                     </ul>
+                    
                 </li>
             </ul>
         </nav>
