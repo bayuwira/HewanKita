@@ -4,16 +4,25 @@ namespace App\Http\Controllers\Landing;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Produk;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        return view('landing.product.index');
+        $data = [
+            'title' => 'Produk',
+            'produk' => Produk::paginate(5) 
+        ];
+        return view('landing.product.index',$data);
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('landing.product.show');
+        $data = [
+            'title' => 'Produk_detail',
+            'produk' => Produk::all()
+        ];
+        return view('landing.product.show',$data);
     }
 }
