@@ -24,9 +24,12 @@ Route::get('/profile_{id}', 'landing\UsersController@profile')->name('landing.us
 Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
 Route::get('/produk_detail', 'landing\ProductController@show')->name('landing.product.detail');
+
+// fokus forum aja
 Route::get('/forum', 'landing\ForumController@index')->name('landing.forum');
-Route::get('/forum_detail', 'landing\ForumController@show')->name('landing.forum.detail');
-Route::get('/forum_tambah', 'landing\ForumController@create')->name('landing.forum.create');
+Route::get('/forum/{id}', 'landing\ForumController@show')->name('landing.forum.detail');
+Route::get('/forum/create', 'landing\ForumController@create')->name('landing.forum.create');
+Route::post('/forum/store', 'landing\ForumController@store')->name('landing.forum.store');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {
