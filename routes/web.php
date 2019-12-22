@@ -29,9 +29,8 @@ Route::get('/forum_detail', 'landing\ForumController@show')->name('landing.forum
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {
         $urlAdmin = '/control-panel';
-
+        Route::get($urlAdmin.'/produk/data', 'Admin\ProdukController@data')->name('adminpanel.produk.data');
         Route::get($urlAdmin, 'Admin\DashboardController@index')->name('adminpanel.dashboard.index');
-
         Route::resource($urlAdmin . '/produk', 'Admin\ProdukController')->names([
             'index' => 'adminpanel.produk.index',
             'create' => 'adminpanel.produk.create',
