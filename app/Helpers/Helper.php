@@ -30,3 +30,22 @@ if(!function_exists('toastr')){
         }
     }
 }
+
+if(!function_exists('numberFormat')){
+    function numberFormat($number){
+        return number_format($number, 0, ',', '.');
+    }
+}
+if(!function_exists('KondisiProduk')){
+    function KondisiProduk($str = ''){
+        $arr = [
+            1 => 'Baru',
+            2 => 'Bekas',
+            3 => 'Tidak Layak'
+        ];
+
+        if(empty($str))
+            return $arr;
+        else return $arr[$str];
+    }
+}

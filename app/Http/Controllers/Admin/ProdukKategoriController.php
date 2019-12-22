@@ -61,7 +61,7 @@ class ProdukKategoriController extends Controller
             return redirect()
                 ->route('adminpanel.kategori.produk.index')
                 ->with('toastr', toastr('Berhasil menambahkan data', 'success'));
-        }catch(\Iluminate\Database\QueryException $e) {
+        }catch(\Illuminate\Database\QueryException $e) {
             DB::rollback();
             return redirect()
                 ->route('adminpanel.kategori.produk.create')
@@ -88,7 +88,18 @@ class ProdukKategoriController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         // return view(this->path.'edit');
+=======
+        $item = ProdukKategori::where('slug', '=', $id)->firstOrFail();
+        
+        $data = [
+            'title' => 'Edit Kategori Produk',
+            'item'  => $item
+        ];
+
+        return view($this->path . 'edit', $data);
+>>>>>>> 0ae796c63394b0fb395bb3279501c524e8f0a43d
     }
 
     /**
@@ -100,7 +111,30 @@ class ProdukKategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::beginTransaction();
+        try {
+            $item = ProdukKategori::where('slug', '=', $id)->firstOrFail();
+            $input = $request->validate([
+                'nama'          => 'string|max:190|required|unique:produk_kategoris,nama',
+            ]);
+
+            $input['slug'] = substr(str_slug($input['nama'], '-'), 0, 190);
+
+            $dataForUpdateKategoriProduk = [
+                'nama'      => $input['nama'],
+                'slug'		=> $input['slug'],
+            ];
+            $item->update($dataForUpdateKategoriProduk);
+            DB::commit();
+            return redirect()
+                ->route('adminpanel.kategori.produk.index', [$item->slug])
+                ->with('toastr', toastr('Berhasil mengubah data', 'success'));
+        } catch (\Illuminate\Database\QueryException $e) {
+            DB::rollback();
+            return redirect()
+                ->route('adminpanel.kategori.produk.edit', [$item->slug])
+                ->with('toastr', toastr('Gagal mengubah data', 'error'));
+        }   
     }
 
     /**

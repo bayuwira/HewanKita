@@ -42,10 +42,31 @@
 <script src="{{ asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/toastr/toastr.min.js') }}"></script>
+@include('ckfinder::setup')
 @yield('js')
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
 <script>
+	function formatRupiah(angka, prefix){
+		var number_string = angka.replace(/[^,\d]/g, '').toString(),
+		split   		= number_string.split(','),
+		sisa     		= split[0].length % 3,
+		rupiah     		= split[0].substr(0, sisa),
+		ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+
+		// tambahkan titik jika yang di input sudah menjadi angka ribuan
+		if(ribuan){
+			separator = sisa ? '.' : '';
+			rupiah += separator + ribuan.join('.');
+		}
+
+		rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+		return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+	}
 	$(document).ready(function(){
+		$('[format-uang]').keyup(function(){
+			var value = $(this).val();
+			$(this).val(formatRupiah(value));
+		});
 		{!! Session::get('toastr') !!}
 	});
 </script>
