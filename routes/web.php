@@ -30,6 +30,7 @@ Route::get('/forum_detail', 'landing\ForumController@show')->name('landing.forum
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {
         $urlAdmin = '/control-panel';
+        //produk jual
         Route::get($urlAdmin.'/produk/data', 'Admin\ProdukController@data')->name('adminpanel.produk.data');
         Route::get($urlAdmin, 'Admin\DashboardController@index')->name('adminpanel.dashboard.index');
         Route::resource($urlAdmin . '/produk', 'Admin\ProdukController')->names([
@@ -42,6 +43,18 @@ Route::group(['middleware' => ['auth']], function () {
         ])->except([
             'show'
         ]);
+        //user
+        Route::resource($urlAdmin . '/pengguna', 'Admin\PenggunaController')->names([
+            'index' => 'adminpanel.pengguna.index',
+            'create' => 'adminpanel.pengguna.create',
+            'store' => 'adminpanel.pengguna.store',
+            'edit' => 'adminpanel.pengguna.edit',
+            'update' => 'adminpanel.pengguna.update',
+            'destroy' => 'adminpanel.pengguna.destroy'
+        ])->except([
+            'show'
+        ]);
+
         Route::get($urlAdmin.'/kategori/produk/data', 'Admin\ProdukKategoriController@data')->name('adminpanel.kategori.produk.data');
         Route::resource($urlAdmin . '/kategori/produk', 'Admin\ProdukKategoriController')->names([
             'index' => 'adminpanel.kategori.produk.index',
