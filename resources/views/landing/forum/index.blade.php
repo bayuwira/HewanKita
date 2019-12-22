@@ -14,7 +14,7 @@
     <div class="container">
         <div class="mb-3">
             <h1 class="text-center mb-5">Forum</h1>
-            <a href="#" class="btn btn-hewankita">Tambah</a>
+            <a href="{{ route('landing.forum.create') }}" class="btn btn-hewankita">Tambah</a>
         </div>
         <div id="search_menu">
             <div class="row" style="justify-content: space-between">

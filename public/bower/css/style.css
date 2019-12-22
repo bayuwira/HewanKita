@@ -826,7 +826,7 @@ section{
 }
 
 .first-content{
-    padding-top: 150px;
+    padding-top: 130px;
 }
 /* profile */
 #section-profile{
@@ -904,9 +904,6 @@ section{
 }
 .card .card-header{
 	background-color: #fc7fb2
-}
-.card .card-title{
-	color: white;
 }
 
 #bottom-row .card{
