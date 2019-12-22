@@ -1,4 +1,4 @@
- <div class="contaiiner-fluid">
+ <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="{{ Route('landing.home') }}">HEWAN<span id="kita">KITA.COM</span></a>

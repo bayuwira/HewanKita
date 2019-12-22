@@ -1,73 +1,93 @@
-@extends('layouts.app')
+@extends('landing.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<center>
+    <div class="form-regis" style="background-color: white; margin-top: 120px; width: 500px; padding: 40px 40px;">
+        <h2 style="font-size: 20px;">HEWAN<span style="color: #FC7FB2;">KITA.COM</span></h2><br>
+        <div id="show-message"></div>
+        <form action="{{ route('login') }}" method="post" id="form-login">
+            @csrf
+            @method('POST')
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" class="form-control">
             </div>
-        </div>
-    </div>
-</div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-hewankita">Login</button>
+            </div>
+        </form>
+    </div><br>
+    <p>Don't Have an account? <span><a href="{{ route('login') }}" style="color: #FC7FB2;">Register now</a></span></p>
+</center>
+@endsection
+
+@section('js')
+    <script>
+        function alert(str, type = 'info'){
+            return `<div class="alert alert-${type} alert-dismissible fade show" role="alert">` +
+                str +
+                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                    '<span aria-hidden="true">&times;</span>'+
+                '</button>'+
+            '</div>';
+        }
+        $(document).ready(function () {
+            $('#form-login').submit(function(e){
+                e.preventDefault();
+
+                var email = $('#email').val();
+                var password = $('#password').val();
+
+                $.ajax({
+                    url: "{{ route('login') }}",
+                    data: {
+                        email,
+                        password
+                    },
+                    method: 'POST',
+                    dataType: 'json',
+                    success: function(data){
+                        if(data.error === true){
+                            $('#show-message').html(
+                                alert(data.message, 'danger')
+                            ).hide().fadeIn(1000);
+                        }else{
+                            window.location = data.message;
+                        }
+                    },
+                    error: function(data){
+
+                        console.log(data);
+                        const { responseJSON } = data;
+                        const { errors } = responseJSON;
+
+
+                        if(typeof(errors)){
+                            let errorsValue = Object.keys(errors).map(function(data){
+                                return errors[data][0];
+                            });
+
+
+                            let listError = '<ul>';
+                            errorsValue.forEach(function(data){
+                                listError += ('<li>'+data+'</li>');
+                            });
+                            listError += '</ul>';
+
+                            $('#show-message').html(
+                                alert(listError, 'danger')
+                            ).hide().fadeIn(1000);
+                        }else{
+                            
+                        }
+                    }
+                })
+            })
+        });
+    </script>
 @endsection

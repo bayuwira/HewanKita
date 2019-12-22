@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\DataTables;
 use App\ProdukKategori;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class ProdukKategoriController extends Controller
 {
@@ -56,6 +56,7 @@ class ProdukKategoriController extends Controller
             ];
            
             ProdukKategori::create($dataForInsertKategoriProduk);
+
             DB::commit();
             return redirect()
                 ->route('adminpanel.kategori.produk.index')
@@ -87,6 +88,9 @@ class ProdukKategoriController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
+        // return view(this->path.'edit');
+=======
         $item = ProdukKategori::where('slug', '=', $id)->firstOrFail();
         
         $data = [
@@ -95,6 +99,7 @@ class ProdukKategoriController extends Controller
         ];
 
         return view($this->path . 'edit', $data);
+>>>>>>> 0ae796c63394b0fb395bb3279501c524e8f0a43d
     }
 
     /**

@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/','landing\HomeController@index')->name('landing.home');
 Route::get('/iklan','landing\AdvertiseController@index')->name('landing.advertise');
 Route::get('/iklan_detail', 'landing\AdvertiseController@show')->name('landing.advertise.detail');
