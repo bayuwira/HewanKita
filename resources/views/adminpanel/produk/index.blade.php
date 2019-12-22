@@ -19,16 +19,16 @@
     <div class="container-fluid">
         <div class="card card-info card-outline">
             <div class="card-body">
-                <table class="table">
+                <table class="table table-bordered table-striped datatables">
                     <thead>
                         <th>No</th>
                         <th>Nama</th>
                         <th>Harga</th>
-                        <th>Kondisi</th>
                         <th>Stok</th>
+                        <th>Aksi</th>
                     </thead>
                     <tbody>
-                        @foreach ($produk as $index => $item)
+                        {{-- @foreach ($produk as $index => $item)
                             <tr>
                                 <td>{{ $index+1 }}</td>
                                 <td>{{ $item->nama }}</td>
@@ -36,13 +36,32 @@
                                     <label class="badge badge-info">Beli</label> : Rp {{ number_format($item->harga_beli,0, ',', '.') }} <br>
                                     <label class="badge badge-success">Jual</label> : Rp {{ number_format($item->harga_jual,0, ',', '.') }}
                                 </td>
-                                <td>{{ ucfirst($item->kondisi) }}</td>
                                 <td>{{ $item->stok }}</td>
                             </tr>
-                        @endforeach
+                        @endforeach --}}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.datatables').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('adminpanel.produk.data') }}",
+                columns: [
+                    {'data': 'DT_RowIndex'},
+                    {'data': 'nama'},
+                    {'data': 'harga'},
+                    {'data': 'stok'},
+                    {'data': 'aksi', orderable: false, searchable: false}
+                ]
+            });
+        });
+    </script>
 @endsection

@@ -78,11 +78,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Harga Jual</label>
-                                <input type="text" class="form-control" name="harga_jual" format-uang  placeholder="ex: 150.000" value="{{ old('harga') }}">
+                                <input type="text" class="form-control" name="harga_jual" format-uang  placeholder="ex: 150.000" value="{{ old('harga_jual') }}">
                             </div>
                             <div class="form-group">
                                 <label for="">Harga Beli</label>
-                                <input type="text" class="form-control" name="harga_beli" format-uang  placeholder="ex: 150.000" value="{{ old('harga') }}">
+                                <input type="text" class="form-control" name="harga_beli" format-uang  placeholder="ex: 150.000" value="{{ old('harga_beli') }}">
                             </div>
                             <div class="form-group">
                                 <label for="">Stok</label>
@@ -90,17 +90,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Diskon</label>
-                                <input type="number" class="form-control" name="stok" value="{{ empty(old('diskon')) ? 0 : old('diskon') }}">
+                                <input type="number" class="form-control" name="diskon" value="{{ empty(old('diskon')) ? 0 : old('diskon') }}">
                             </div>
-                            <div class="form-group">
-                                <label>Kondisi</label>
-                                <select name="kondisi" class="form-control">
-                                    <option value="">-- Pilih --</option>
-                                    @foreach (KondisiProduk() as $key => $value)
-                                        <option value="{{ $key }}" {{ ($key === old('kondisi') ? 'selected' : '') }}>{{ $value }}</option>
-                                    @endforeach
-                                </select>
-                           </div>
                             <div class="form-group">
                                 <label>Kategori Produk</label>
                                 <select name="produk_kategori_id" class="form-control">

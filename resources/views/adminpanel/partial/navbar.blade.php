@@ -7,6 +7,11 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('landing.home') }}">
+                <i class="fas fa-globe-americas"></i>
+            </a>
+        </li>
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-bell"></i>

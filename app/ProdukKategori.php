@@ -12,6 +12,7 @@ class ProdukKategori extends Model
     
     protected  $fillable = [
         'nama',
-        'slug'
+        'slug',
+        'icon'
     ];
 }

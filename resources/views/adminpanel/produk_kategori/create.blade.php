@@ -70,6 +70,10 @@
                                 <label>Nama Kategori Produk</label>
                                 <input type="text" class="form-control" name="nama" value="{{ old('nama') }}" >
                             </div>
+                            <div class="form-group">
+                                <label for="">Icon</label>
+                                <input type="text" name="icon" id="" class="form-control" value="{{ old('icon') }}">
+                            </div>
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>

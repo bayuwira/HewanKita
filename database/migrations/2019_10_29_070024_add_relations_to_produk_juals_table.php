@@ -14,7 +14,6 @@ class AddRelationsToProdukJualsTable extends Migration
     public function up()
     {
         Schema::table('produk_juals', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('produk_kategori_id')->references('id')->on('produk_kategoris');
         });
     }
