@@ -15,14 +15,12 @@ class Produk extends Model
         'deskripsi',
         'slug',
         'no_telp',
-        'thumbnail',
+        'photo_thumbnail',
         'harga_jual',
         'harga_beli',
         'diskon',
         'stok',
-        'lokasi',
         'kondisi',
-        'user_id',
         'produk_kategori_id'
     ];
 

@@ -46,6 +46,7 @@ class ProdukKategoriController extends Controller
         try {
             $input = $request->validate([
                 'nama'          => 'string|max:190|required|unique:produk_kategoris,nama',
+                'icon'          => 'string|required'
             ]);
 
             $input['slug'] = substr(str_slug($input['nama'], '-'), 0, 190);
@@ -53,6 +54,7 @@ class ProdukKategoriController extends Controller
             $dataForInsertKategoriProduk = [
                 'nama'      => $input['nama'],
                 'slug'		=> $input['slug'],
+                'icon'      => $input['icon']
             ];
            
             ProdukKategori::create($dataForInsertKategoriProduk);

@@ -31,7 +31,7 @@
                             <a class="nav-link" href="{{ Route('register') }}"><i class="fas fa-comments"></i> Komentar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ Route('landing.forum')}}"> <i class="fas fa-journal-whills"></i> Forum</a>
+                            <a class="nav-link" href="{{ Route('landing.forum')}}"> <i class="far fa-newspaper"></i> Forum</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ Route('landing.users.create')}}"> <i class="fas fa-camera"></i> Buat Iklan</a>
@@ -42,8 +42,9 @@
                         @endphp
                         <a class="nav-link" href="#!" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> Halo, {{ $name[count($name)-1] }} </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"><i class="fas fa-users-cog"></i> Profile</a>
+                                <a class="dropdown-item" href="{{ Route('landing.users.profile', [ Auth::user()->id]) }}"><i class="fas fa-users-cog"></i> Profile</a>
                                 <a class="dropdown-item" href="{{ Route('landing.users.dashboard', [ Auth::user()->id]) }}"><i class="fas fa-folder-open"></i> Iklan-ku</a>
+                                <a class="dropdown-item" href="{{ Route('landing.users.dashboard', [ Auth::user()->id]) }}"><i class="fas fa-newspaper"></i> Forum-ku</a>
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Keluar</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
