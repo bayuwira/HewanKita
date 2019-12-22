@@ -869,4 +869,86 @@ section{
     background-color: #fff1e9!important;
 }
 
+/* dashboard forum */
+#dashboard_forum{
+    padding: 100px 150px 20px 150px;
+}
+.section_main{
+    background-color: #fff1e9!important;
+}
+
+.btn-pink{
+    background-color: #fc7fb2;
+    color: white;
+}
+
+#table-forum .btn-status{
+    background-color: #38ab3e;
+    color: white;
+    margin-bottom: 1px;
+}
+#table-forum .btn-delete{
+    background-color: #cf2e25;
+    color: white;
+    margin-bottom: 1px;
+}
+
+#TambahButton{
+	width: 100%!important;
+}
+
+#searchbar{
+	padding: 2px;
+	border: 1px solid #fc7fb2;
+	border-radius: 10px;
+}
+.card .card-header{
+	background-color: #fc7fb2
+}
+.card .card-title{
+	color: white;
+}
+
+#bottom-row .card{
+	width: 100%!important;
+}
+#iklan-populer{
+	border: 1px solid #fc7fb2
+}
+#table-iklan{
+	color: #45454d;
+}
+
+.table-striped>thead>tr>th{
+	background-color: #fc7fb2
+}
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #f2c7d9;
+}
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+    background-color: #ebd3dd;
+}
+
+#table-forum .table-stripped>tbody>td{
+	text-align: center;
+}
+.action-forum{
+    padding-left: 150px;
+}
+
+/* create forum */
+#section-create-forum{
+    padding: 100px 150px 20px 150px;
+}
+.btn-pink{
+	width: 100%;
+	background-color: #fc7fb2;
+	color: white;
+	border: none;
+}
+
+
+
 
