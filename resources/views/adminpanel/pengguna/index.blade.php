@@ -15,6 +15,10 @@
     </div>
 @endsection
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="card card-info card-outline">
@@ -37,7 +41,7 @@
 @section('js')
     <script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
-    {{-- <script>
+    <script>
         $(document).ready(function(){
             $('.datatables').DataTable({
                 processing: true,
@@ -52,5 +56,5 @@
                 ]
             });
         });
-    </script> --}}
+    </script>
 @endsection

@@ -13,7 +13,7 @@
 <section class="first-content">
     <div class="container">
         <div class="mb-3">
-            <h2 class="second-textcolor text-center mb-5">Forum</h2>
+            <h1 class="text-center mb-5">Forum</h1>
             <a href="#" class="btn btn-hewankita">Tambah</a>
         </div>
         <div id="search_menu">
