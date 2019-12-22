@@ -23,6 +23,7 @@ Route::get('/iklan_dashboard_{id}', 'Landing\UsersController@dashboard')->name('
 Route::get('/forum_tambah', 'Landing\UsersController@create_forum')->name('landing.users.create_forum');
 Route::get('/forum_dashboard_{id}', 'Landing\UsersController@dashboard_forum')->name('landing.users.dashboard_forum');
 Route::get('/profile_{id}', 'Landing\UsersController@profile')->name('landing.users.profile');
+Route::patch('/profile/update{id}', 'Landing\UsersController@update')->name('landing.users.update');
 Route::get('/keranjang', 'Landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'Landing\ProductController@index')->name('landing.product');
 Route::get('/produk_detail', 'Landing\ProductController@show')->name('landing.product.detail');
