@@ -19,4 +19,13 @@ class UsersController extends Controller
     {
         return view('landing.users.dashboard');
     }
+    public function create_forum()
+    {
+        return view('landing.users.create_forum');
+    }
+    public function dashboard_forum($id)
+    {
+        return view('landing.users.dashboard_forum');
+    }
+    
 }

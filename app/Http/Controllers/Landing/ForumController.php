@@ -15,7 +15,4 @@ class ForumController extends Controller
     {
         return view('landing.forum.show');
     }
-    public function create(){
-        return view('landing.forum.create');
-    }
 }
