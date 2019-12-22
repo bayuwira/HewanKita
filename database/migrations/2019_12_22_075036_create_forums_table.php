@@ -16,6 +16,7 @@ class CreateForumsTable extends Migration
         Schema::create('forums', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('judul');
+            $table->text('konten');
             $table->string('slug')->unique();
             $table->enum('status', ['terbuka', 'terjawab', 'tertutup']);
             $table->timestamps();
