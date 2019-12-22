@@ -14,18 +14,19 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// landing controller
 Route::get('/','landing\HomeController@index')->name('landing.home');
 Route::get('/iklan','landing\AdvertiseController@index')->name('landing.advertise');
 Route::get('/iklan_detail', 'landing\AdvertiseController@show')->name('landing.advertise.detail');
 Route::get('/iklan_tambah', 'landing\UsersController@create')->name('landing.users.create');
 Route::get('/iklan_dashboard_{id}', 'landing\UsersController@dashboard')->name('landing.users.dashboard');
+Route::get('/profile_{id}', 'landing\UsersController@profile')->name('landing.users.profile');
 Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
 Route::get('/produk_detail', 'landing\ProductController@show')->name('landing.product.detail');
 Route::get('/forum', 'landing\ForumController@index')->name('landing.forum');
 Route::get('/forum_detail', 'landing\ForumController@show')->name('landing.forum.detail');
-
-
+Route::get('/forum_tambah', 'landing\ForumController@create')->name('landing.forum.create');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {
