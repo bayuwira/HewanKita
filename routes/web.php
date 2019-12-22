@@ -27,13 +27,15 @@ Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
 Route::get('/produk_detail', 'landing\ProductController@show')->name('landing.product.detail');
 
-// fokus forum aja
+// forum 
 Route::get('/forum', 'landing\ForumController@index')->name('landing.forum');
 Route::get('/forum/{id}', 'landing\ForumController@show')->name('landing.forum.detail');
-Route::get('/forum/create', 'landing\ForumController@create')->name('landing.forum.create');
-Route::post('/forum/store', 'landing\ForumController@store')->name('landing.forum.store');
 
 Route::group(['middleware' => ['auth']], function () {
+    // forum
+    Route::get('/forum/create', 'landing\ForumController@create')->name('landing.forum.create');
+    Route::post('/forum/store', 'landing\ForumController@store')->name('landing.forum.store');
+
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {
         $urlAdmin = '/control-panel';
         //produk jual
@@ -77,7 +79,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify' => true]);
 
 // Route::get('/siap', function () {

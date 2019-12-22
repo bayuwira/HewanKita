@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Yajra\DataTables\DataTables;
 use App\User;
-use App\User_detail;
-use DB;
+use App\UserDetail;
+use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\Facades\DataTables;
+
 class PenggunaController extends Controller
 {
     private $path = 'adminpanel.pengguna.';
@@ -65,7 +66,7 @@ class PenggunaController extends Controller
 
             $user = User::create($dataForInsertUser);
             $dataForInsertDetailUser['user_id'] = $user->id;
-            User_detail::create($dataForInsertDetailUser);
+            UserDetail::create($dataForInsertDetailUser);
             DB::commit();
             return redirect()
                 ->route('adminpanel.pengguna.create')
@@ -84,7 +85,8 @@ class PenggunaController extends Controller
     public function destroy($id){
 
     }
-    public function data(){
 
+    public function data(){
+        return DataTables::of(User::all());
     }
 }

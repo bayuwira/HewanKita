@@ -2,7 +2,7 @@
 
 @section('content')
 <center>
-    <div class="form-regis" style="background-color: white; margin-top: 120px; width: 500px; padding: 40px 40px;">
+    <div class="form-regis bg-pink" style="margin-top: 120px; width: 500px; padding: 40px 40px;">
         <h2 style="font-size: 20px;">HEWAN<span style="color: #FC7FB2;">KITA.COM</span></h2><br>
         <div id="show-message"></div>
         <form action="{{ route('login') }}" method="post" id="form-login">
