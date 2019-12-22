@@ -910,6 +910,10 @@ section{
 	color: white;
 }
 
+.iklan-dashboard{
+    padding-left: 100px;
+}
+
 #bottom-row .card{
 	width: 100%!important;
 }
