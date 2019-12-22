@@ -43,7 +43,7 @@ section{
     background-color: #FFD5D5   ;
     border-radius: 30px;
     padding: 10px;
-    }
+}
 
 .search_input{
     color: #45454D;
@@ -54,14 +54,18 @@ section{
     caret-color:transparent;
     line-height: 40px;
     transition: width 0.4s linear;
-}
-
-.searchbar:hover > .search_input{
     padding: 0 10px;
-    width: 450px;
+    width: 400px;
     caret-color:red;
     transition: width 0.4s linear;
 }
+
+    /* .searchbar:hover > .search_input{
+        padding: 0 10px;
+        width: 450px;
+        caret-color:red;
+        transition: width 0.4s linear;
+    } */
 
 .searchbar:hover > .search_icon{
     background: white;

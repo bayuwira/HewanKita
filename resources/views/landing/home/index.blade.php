@@ -83,7 +83,7 @@
         </div>
     </div>
 </section>
-<section id="forum">
+<section id="produk">
     <div class="container">
         <div class="second-textcolor text-center">
             <h2>PERLENGKAPAN HEWAN</h2>
@@ -152,7 +152,7 @@
         <a href="{{ Route('landing.product') }}" class="btn btn-mid">SAYA BUTUH YANG LAIN</a>
     </div>
 </section>
-<section id="forum">
+<section id="forum" class="bg-middleware">
     <div class="container">
         <div class="second-textcolor text-center">
             <h2>FORUM TERBAIK</h2>
@@ -160,7 +160,6 @@
         <div class="row text-center">
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Forum Reptile</h4>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
@@ -174,7 +173,6 @@
 
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Forum Mammalia</h4>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
@@ -189,7 +187,6 @@
 
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Forum Unggas</h4>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
@@ -203,7 +200,6 @@
 
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Forum Amphibi</h4>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
@@ -218,7 +214,7 @@
         </div>
     </div>
     <div class="text-center">
-        <a href="{{ Route('landing.forum') }}" class="btn btn-mid">FORUM</a>
+        <a href="{{ Route('landing.forum') }}" class="btn btn-mid">Tampilkan Lebih Banyak</a>
     </div>
 </section>
 <section id="team">

@@ -171,7 +171,10 @@ class ProdukKategoriController extends Controller
                             </form>	
                         ";
                 })
-                ->rawColumns(['aksi'])
+                ->editColumn('icon', function($data){
+                    return '<i class="'.$data['icon'].'"></i>';
+                })
+                ->rawColumns(['aksi', 'icon'])
                 ->make();
         }  
     
