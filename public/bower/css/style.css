@@ -797,5 +797,18 @@ ul.mail-list li span.subtopic_description{
 .table-striped>tbody>tr:nth-child(even)>th {
     background-color: #ebd3dd;
 }
+.card-text-jawaban{
+    color: #45454D;
+}
+.card-text{
+    color: #45454D;
+}
 
+section{
+    padding: 80px 0;
+}
+
+.first-content{
+    padding-top: 150px;
+}
 

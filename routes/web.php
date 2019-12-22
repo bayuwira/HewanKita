@@ -25,8 +25,6 @@ Route::get('/produk_detail', 'landing\ProductController@show')->name('landing.pr
 Route::get('/forum', 'landing\ForumController@index')->name('landing.forum');
 Route::get('/forum_detail', 'landing\ForumController@show')->name('landing.forum.detail');
 
-
-
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {
         $urlAdmin = '/control-panel';
