@@ -15,4 +15,8 @@ class AdvertiseController extends Controller
     {
         return view('landing.advertise.show');
     }
+    public function create()
+    {
+        return view('landing.advertise.create');
+    }
 }
