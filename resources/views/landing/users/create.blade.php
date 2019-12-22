@@ -1,20 +1,10 @@
 @extends('landing.app')
 @section('content')
-<header class="bg-middleware text-black-50">
-    <div class="container text-center header-container">
-        <h1 class="main-textcolor">BUAT IKLANMU, DIAMAPUN, KAPANPUN DI HEWAN<span id="kita">KITA.COM</span></h1>
-        <div class="row animal-header">
-            <a href=""><i class="fas fa-dog"></i></a>
-            <a href=""><i class="fas fa-cat"></i></a>
-            <a href=""><i class="fas fa-crow"></i></a>
-            <a href=""><i class="fas fa-fish"></i></a>
-            <a href=""><i class="fas fa-spider"></i></a>
-            <a href=""><i class="fas fa-otter"></i></a>
-        </div>
-    </div>
-</header>
-<div class="section_mainrama">
+<section id="create-ads-rama">
         <div class="container-fluid">
+            <div class="second-textcolor text-center">
+                <h2>BUAT IKLAN</h2>
+            </div>
             <div class="row px-3 py-3">
                 <div class="col-lg-4 col-sm-12 col-md-12 border-right-1">
                     <div class="container">
@@ -22,13 +12,13 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-btn">
-                                    <span class="btn-rama btn-file">
+                                    <span class="btn btn-rama btn-file-rama">
                                         Browse… <input type="file" id="imgInp">
                                     </span>
                                 </span>
                                 <input type="text" class="form-control" readonly>
                             </div>
-                            <img id='img-upload' class="img-thumbnail img-fluid" />
+                            <img id='img-upload-rama' class="img-thumbnail img-fluid" />
                         </div>
                     </div>
                 </div>
@@ -41,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="desc">Deskripsi Produk</label>
-                                <textarea name="desc_product" class="form-control" id="desc_product" ></textarea>
+                                <textarea name="deskripsi" class="form-control ckeditor" id="desc_product"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat Pengiklan</label>
@@ -51,26 +41,28 @@
                                 <label for="telp">No Telp</label>
                                 <input type="text" name="telp" class="form-control" id="telp" placeholder="No Telp Pegiklan">
                             </div>
-                            <button class="btn-rama btn-primary">Tambah Iklan</button>
+                            <button class="btn btn-primary">Tambah Iklan</button>
                         </div>
                     </div>
                 </div>
             </div>    
         </div>
-    </div>
+    </section>
 
 @endsection
-
 @section('js')
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
-        $(document).ready( function() {
-        $(document).on('change', '.btn-file :file', function() {
+    $(document).ready( function() {
+        $(document).on('change', '.btn-file-rama :file', function() {
         var input = $(this),
             label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
         input.trigger('fileselect', [label]);
         });
 
-        $('.btn-file :file').on('fileselect', function(event, label) {
+        $('.btn-file-rama :file').on('fileselect', function(event, label) {
             
             var input = $(this).parents('.input-group').find(':text'),
                 log = label;
@@ -87,7 +79,7 @@
                 var reader = new FileReader();
                 
                 reader.onload = function (e) {
-                    $('#img-upload').attr('src', e.target.result);
+                    $('#img-upload-rama').attr('src', e.target.result);
                 }
                 
                 reader.readAsDataURL(input.files[0]);
@@ -98,5 +90,48 @@
             readURL(this);
         });     
     });
+    </script>
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <script>
+        $(document).ready(function(){
+            var config = {
+                filebrowserBrowseUrl: '{{ config("APP_URL") }}/ckfinder/browser',
+                removeDialogTabs: 'link:upload;image:Upload;image:advanced;link:advanced',
+                removeButtons: 'Anchor,Table,HorizontalRule,Superscript,Subscript,Indent,Outdent,Blockquote,About,Scayt,Styles,SpecialChar',
+                format_tags: 'p;h1;h2;h3;h4;h5;h6'
+            }
+
+            var editor = CKEDITOR.replace('ckfinder', config);
+            CKFinder.setupCKEditor(editor);
+            $('#btnReset').click(function(){
+                btnFoto('remove')
+            });
+            $('#photo_thumbnail').click(function(){
+                CKFinder.popup( {
+                    chooseFiles: true,
+                    onInit: function( finder ) {
+                        finder.on( 'files:choose', function( evt ) {
+                            var file = evt.data.files.first();
+                            var url = file.getUrl();
+                            $('#photo_thumbnail_text').val(url);
+                            $('#photo_thumbnail_img').attr('src', url).css('display', 'block');
+                            $('#photo_thumbnail_clear').show();
+                        } );
+                        finder.on( 'file:choose:resizedImage', function( evt ) {
+                            var url = evt.data.resizedUrl;
+                            $('#photo_thumbnail_text').val(url);
+                            $('#photo_thumbnail_img').attr('src', url).css('display', 'block');
+                            $('#photo_thumbnail_clear').show();
+                        } );
+                    }
+                });
+            });
+            $('#photo_thumbnail_clear').click(function(){
+                $('#photo_thumbnail_text').val(null);
+                $('#photo_thumbnail_img').attr('src', null).hide();
+                $(this).hide();
+            });
+
+        });
     </script>
 @endsection

@@ -1,10 +1,24 @@
 @extends('landing.app')
 @section('content')
-    <div class="section section-main-rama2">
+<header class="bg-middleware text-black-50">
+    <div class="container text-center header-container">
+        <h1 class="main-textcolor">SELAMAT DATANG HEWAN<span id="kita">KITA.COM</span></h1>
+        <p class="lead main-textcolor">Sebuah Website yang menghubungkan anda dengan seluruh fauna di dunia !</p>
+        <div class="row animal-header">
+            <a href=""><i class="fas fa-dog"></i></a>
+            <a href=""><i class="fas fa-cat"></i></a>
+            <a href=""><i class="fas fa-crow"></i></a>
+            <a href=""><i class="fas fa-fish"></i></a>
+            <a href=""><i class="fas fa-spider"></i></a>
+            <a href=""><i class="fas fa-otter"></i></a>
+        </div>
+    </div>
+</header>
+    <div class="section">
         <div class="container-fluid">
             <div class="row mt-3" id="top-row">
                 <div class="col-lg-4 col-md-6 col-sm-12 pl-5 py-2">
-                    <a role="button" class="btn-rama2" href="add_produk.php" id="TambahButton">Tambah iklan<i class="fa fa-plus pl-1"></i></a>
+                    <a role="button" class="btn btn-rama2" href="{{ Route('landing.users.create')}}" id="TambahButton">Tambah iklan<i class="fa fa-plus pl-1"></i></a>
                 </div>
                 <div class="col-lg-8 col-md-6 col-sm-12 pr-3 py-2">
                             <div id="searchbar">    
@@ -80,4 +94,9 @@
             </div>
         </div>    
     </div>
+@endsection
+@section('js')
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 @endsection

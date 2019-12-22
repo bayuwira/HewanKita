@@ -19,7 +19,7 @@
             <div id="search_menu">
                 <div class="row">
                     <div class="col-lg-4 col-sm-12 col-md-12 py-2">
-                        <div id="searchbar">
+                    <div id="searchbar">
                             <div class="input-group md-form form-sm form-2 pl-0">
                                 <input class="form-control my-0 py-1 border" type="text" placeholder="Search"
                                     aria-label="Search">
@@ -42,12 +42,9 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-12 col-md-12 py-2">
-                        <button class="btn btn-dark dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Filter</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Belum Terjawab</a>
-                            <a class="dropdown-item" href="#">Sudah Terjawab</a>
-                        </div>
+                        <a href="{{ Route('landing.forum.create') }}">
+                            <button class="btn btn-dark" type="button">Tambah</button>
+                        </a>
                     </div>
                 </div>
             </div>
