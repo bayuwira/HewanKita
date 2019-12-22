@@ -12,17 +12,17 @@
 					@method('POST')
 
 					<div class="form-group">
-						<label>Judul forum</label>
-						<input type="text" class="form-control" name="judul">
+						<label>Judul</label>
+						<input type="text" class="form-control" name="judul" value="{{ old('judul') }}">
 						<small class="form-text text-muted">Judulnya apa ya ? biar tau nih</small>
 					</div>
 					<div class="form-group">
-						<label>Topik yang ditanyakan</label>
-						<textarea name="deskripsi" class="form-control" style="height: 250px"></textarea>
+						<label>Konten</label>
+						<textarea name="konten" class="form-control" style="height: 250px">{{ old('konten') }}</textarea>
 						<small class="form-text text-muted">Tanyainnya bebas aja , yang penting ga aneh aneh wkwkwk</small>
 					</div>
-				</form>
-				<button type="submit" class="btn btn-hewankita btn-block">TANYAIN!!</button>
+                    <button type="submit" class="btn btn-hewankita btn-block">TANYAIN!!</button>
+                </form>
 			</div>
 		</div>
 	</div>    

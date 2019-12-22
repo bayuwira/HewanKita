@@ -32,6 +32,7 @@ Route::get('/forum', 'Landing\ForumController@index')->name('landing.forum');
 Route::get('/forum/create', 'Landing\ForumController@create')->name('landing.forum.create')->middleware('auth');
 Route::post('/forum/store', 'Landing\ForumController@store')->name('landing.forum.store')->middleware('auth');
 Route::get('/forum/{id}/show', 'Landing\ForumController@show')->name('landing.forum.show');
+Route::post('/forum/{id}', 'Landing\ForumController@store_comment')->name('landing.forum.comment.store');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {

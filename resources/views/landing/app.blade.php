@@ -19,6 +19,7 @@
 
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
     <link href="{{ asset('bower/vendor/bootstrap/js/bootstrap.min.js') }}" rel="stylesheet">
+    <script src="{{ asset('adminlte/plugins/toastr/toastr.min.js') }}"></script>
     @yield('js')
     <script type="text/javascript">
         $.ajaxSetup({

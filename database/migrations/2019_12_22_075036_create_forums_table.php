@@ -19,7 +19,10 @@ class CreateForumsTable extends Migration
             $table->text('konten');
             $table->string('slug')->unique();
             $table->enum('status', ['terbuka', 'terjawab', 'tertutup']);
+            $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
