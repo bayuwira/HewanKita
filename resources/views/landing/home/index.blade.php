@@ -1,24 +1,22 @@
 @extends('landing.app')
 @section('content')
-<header class="bg-middleware text-black-50">
+<section class="first-content bg-pink">
     <div class="container text-center header-container">
-        <h1 class="main-textcolor">SELAMAT DATANG HEWAN<span id="kita">KITA.COM</span></h1>
+        <h1 class="main-textcolor">SELAMAT DATANG HEWAN<span class="kita">KITA.COM</span></h1>
         <p class="lead main-textcolor">Sebuah Website yang menghubungkan anda dengan seluruh fauna di dunia !</p>
         <div class="row animal-header">
-            <a href=""><i class="fas fa-dog"></i></a>
-            <a href=""><i class="fas fa-cat"></i></a>
-            <a href=""><i class="fas fa-crow"></i></a>
-            <a href=""><i class="fas fa-fish"></i></a>
-            <a href=""><i class="fas fa-spider"></i></a>
-            <a href=""><i class="fas fa-otter"></i></a>
+            <i class="fas fa-dog"></i>  
+            <i class="fas fa-cat"></i>  
+            <i class="fas fa-crow"></i> 
+            <i class="fas fa-fish"></i> 
+            <i class="fas fa-spider"></i>   
+            <i class="fas fa-otter"></i>    
         </div>
     </div>
-</header>
+</section>
 <section id="pets-need">
     <div class="container">
-        <div class="second-textcolor text-center">
-            <h2>MEREKA BUTUH KAMU</h2>
-        </div>
+        <h2 class="mb-3">Mereka sedang mebutuhkan bantuanmu!</h2>
         <div class="row text-center">
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
@@ -79,15 +77,13 @@
             </div>
         </div>
         <div class="text-center">
-            <a href="{{ Route('landing.advertise') }}" class="btn btn-mid">SAYA MAU YANG LAIN</a>
+            <a href="{{ Route('landing.advertise') }}" class="btn btn-hewankita mt-5">SAYA MAU YANG LAIN</a>
         </div>
     </div>
 </section>
-<section id="produk">
+<section id="produk" class="bg-middleware">
     <div class="container">
-        <div class="second-textcolor text-center">
-            <h2>PERLENGKAPAN HEWAN</h2>
-        </div>
+        <h2 class="mb-4">Segala kebutuhan perlengkapan peliharaanmu</h2>
         <div class="row text-center">
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
@@ -149,75 +145,48 @@
         </div>
     </div>
     <div class="text-center">
-        <a href="{{ Route('landing.product') }}" class="btn btn-mid">SAYA BUTUH YANG LAIN</a>
+        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita mt-5">SAYA BUTUH YANG LAIN</a>
     </div>
 </section>
-<section id="forum" class="bg-middleware">
+@if(!empty($forum))
+    <section id="forum" class="bg-middleware">
+        <div class="container">
+            <div class="second-textcolor text-center">
+                <h2 class="mb-5">Forum Terbaru</h2>
+            </div>
+            @foreach ($forum as $item)
+                <div class="col-lg-4 col-sm-12 col-md-12 py-2">
+                    <a href="#">
+                        <div class="card">
+                            <div class="card-body">
+                                <span class="badge mb-2 float-right" id="status-forum">Status Forum</span>
+                                <h5 class="card-title">Judul Forum</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Username yang post forum</h6>
+                                <p class="card-text">Konten Forum</p>
+                                <span class="card-text-jawaban"><i class="fa fa-comment"></i>Total jawaban</span>
+                                <div class="white-space : pre"></div>
+                                <h8 class="card-subtitle my-2 text-muted">Tanggal Upload Forum</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </section>
+@endif
+<section class="bg-pink">
     <div class="container">
-        <div class="second-textcolor text-center">
-            <h2>FORUM TERBAIK</h2>
-        </div>
-        <div class="row text-center">
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title">Forum Reptile</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
-                            necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-hewankita">TAMPILKAN</a>
-                    </div>
-                </div>
+        <div class="row" style="align-items: center">
+            <div class="col-md-9">
+                <h3>AYO <span class="kita">DAFTAR</span>, <br>DAN IKLANKAN <span class="kita">PELIHARAANMU</span>!</h3>
             </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title">Forum Mammalia</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-                            magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-hewankita">TAMPILKAN</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title">Forum Unggas</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
-                            necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-hewankita">TAMPILKAN</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title">Forum Amphibi</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-                            magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-hewankita">TAMPILKAN</a>
-                    </div>
-                </div>
+            <div class="col-md-3">
+                <a href="#" class="btn btn-hewankita">Daftar Sekarang Juga!</a>
             </div>
         </div>
-    </div>
-    <div class="text-center">
-        <a href="{{ Route('landing.forum') }}" class="btn btn-mid">Tampilkan Lebih Banyak</a>
     </div>
 </section>
-<section id="team">
+{{-- <section id="team" class="bg-pink">
     <div class="container">
         <div class="col-md-12 text-center">
             <h2>Tim Developer</h2>
@@ -275,46 +244,44 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<div class="container-fluid">
-    <div class="row section-team">
-        <div class="col-md-6 col-sm-6 team-manager">
-            <div class="our-team">
-                <div class="pic">
-                    <img src="img/agus.jpg">
+        <div class="row" style="justify-content: center">
+            <div class="col-md-4 col-sm-4">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="img/agus.jpg">
 
+                    </div>
+                    <div class="team-content">
+                        <h3>Agus Wahyu</h3>
+                        <span class="post"> Full Stack Developer </span>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" class="fab fa-facebook"></a></li>
+                        <li><a href="" class="fab fa-twitter"></a></li>
+                        <li><a href="" class="fab fa-google-plus"></a></li>
+                        <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
+                    </ul>
                 </div>
-                <div class="team-content">
-                    <h3>Agus Wahyu</h3>
-                    <span class="post"> Full Stack Developer </span>
-                </div>
-                <ul class="social">
-                    <li><a href="" class="fab fa-facebook"></a></li>
-                    <li><a href="" class="fab fa-twitter"></a></li>
-                    <li><a href="" class="fab fa-google-plus"></a></li>
-                    <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
-                </ul>
             </div>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <div class="our-team">
-                <div class="pic">
-                    <img src="img/dharma.jpg">
+            <div class="col-md-4 col-sm-4">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="img/dharma.jpg">
 
+                    </div>
+                    <div class="team-content">
+                        <h3>Dharma Putra</h3>
+                        <span class="post"> Back End Developer </span>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" class="fab fa-facebook"></a></li>
+                        <li><a href="" class="fab fa-twitter"></a></li>
+                        <li><a href="" class="fab fa-google-plus"></a></li>
+                        <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
+                    </ul>
                 </div>
-                <div class="team-content">
-                    <h3>Dharma Putra</h3>
-                    <span class="post"> Back End Developer </span>
-                </div>
-                <ul class="social">
-                    <li><a href="" class="fab fa-facebook"></a></li>
-                    <li><a href="" class="fab fa-twitter"></a></li>
-                    <li><a href="" class="fab fa-google-plus"></a></li>
-                    <li><a href="www.instagram.com/in/raj-kumar-web-designer" class="fab fa-instagram"></a></li>
-                </ul>
             </div>
         </div>
     </div>
-</div> 
+</section> --}}
 @endsection
