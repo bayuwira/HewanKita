@@ -70,15 +70,15 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function registered(Request $request, $user)
-    {
-        if(Auth::user()->hak_akses == 1 ){
-            return redirect()->route('adminpanel.dashboard.index');
-        }
-        else{
-            return redirect()->route('landing.home.index');
-        }
-    }
+    // protected function registered(Request $request, $user)
+    // {
+    //     if(Auth::user()->hak_akses == 1 ){
+    //         return redirect()->route('adminpanel.dashboard.index');
+    //     }
+    //     else{
+    //         return redirect()->route('landing.home.index');
+    //     }
+    // }
 
     protected function redirectTo(Request $request, $user)
     {

@@ -43,7 +43,7 @@ section{
     background-color: #FFD5D5   ;
     border-radius: 30px;
     padding: 10px;
-    }
+}
 
 .search_input{
     color: #45454D;
@@ -54,14 +54,18 @@ section{
     caret-color:transparent;
     line-height: 40px;
     transition: width 0.4s linear;
-}
-
-.searchbar:hover > .search_input{
     padding: 0 10px;
-    width: 450px;
+    width: 400px;
     caret-color:red;
     transition: width 0.4s linear;
 }
+
+    /* .searchbar:hover > .search_input{
+        padding: 0 10px;
+        width: 450px;
+        caret-color:red;
+        transition: width 0.4s linear;
+    } */
 
 .searchbar:hover > .search_icon{
     background: white;
@@ -703,4 +707,95 @@ ul.mail-list li span.subtopic_description{
 	text-decoration: none;
 	padding-bottom: .5rem!important;
 }
+
+/* crate advertise */
+.section_mainrama{
+    background-color: #fff1e9!important;
+}
+
+ .btn{
+    background-color: #fc7fb2;
+    color: white;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+    height: 500px;
+}
+
+/* dashboard - user - advertise*/
+.section_main-rama2{
+    background-color: #fff1e9!important;
+}
+
+.btn-rama2{
+    background-color: #fc7fb2;
+    color: white;
+}
+
+#table-iklan .btn-rama2{
+    background-color: #ffd5d5;
+    color: #45454d;
+    margin-bottom: 1px;
+}
+#TambahButton{
+	width: 100%!important;
+}
+
+#searchbar{
+	padding: 2px;
+	border: 1px solid #fc7fb2;
+	border-radius: 10px;
+}
+.card-rama .card-header-rama{
+	background-color: #fc7fb2
+}
+.card-rama .card-title-rama{
+	color: white;
+}
+
+#bottom-row .card-rama{
+	width: 100%!important;
+}
+#iklan-populer{
+	border: 1px solid #fc7fb2
+}
+.col-nama{
+	width: 70%!important;
+}
+#table-iklan{
+	color: #45454d;
+}
+
+.table-striped>thead>tr>th{
+	background-color: #fc7fb2
+}
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #f2c7d9;
+}
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+    background-color: #ebd3dd;
+}
+
 
