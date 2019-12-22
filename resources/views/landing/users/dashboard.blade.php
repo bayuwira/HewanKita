@@ -66,25 +66,25 @@
                                 <tr>
                                   <th scope="row">1</th>
                                   <td>Mark</td>
-                                  <td>
-                                    <a role="button" class="btn-rama2" href="add_produk.php" >edit<i class="fa fa-edit pl-1"></i></a>
-                                    <a role="button" class="btn-rama2" href="add_produk.php" >delete<i class="fa fa-trash pl-1"></i></a>
+                                  <td class="text-center iklan-dashboard">
+                                    <a role="button" class="btn btn-rama2" href="add_produk.php" >edit<i class="fa fa-edit pl-1 text-primary"></i></a>
+                                    <a role="button" class="btn btn-rama2" href="add_produk.php" >delete<i class="fa fa-trash pl-1 text-danger"></i></a>
                                   </td>
                                 </tr>
                                 <tr>
                                   <th scope="row">1</th>
                                   <td>Mark</td>
-                                  <td>
-                                    <a role="button" class="btn-rama2" href="add_produk.php" >edit<i class="fa fa-edit pl-1"></i></a>
-                                    <a role="button" class="btn-rama2" href="add_produk.php" >delete<i class="fa fa-trash pl-1"></i></a>
+                                  <td class="text-center iklan-dashboard">
+                                    <a role="button" class="btn btn-rama2" href="add_produk.php" >edit<i class="fa fa-edit pl-1 text-primary"></i></a>
+                                    <a role="button" class="btn btn-rama2" href="add_produk.php" >delete<i class="fa fa-trash pl-1 text-danger"></i></a>
                                   </td>
                                 </tr>
                                 <tr>
                                   <th scope="row">1</th>
                                   <td>Mark</td>
-                                  <td>
-                                    <a role="button" class="btn-rama2" href="add_produk.php" >edit<i class="fa fa-edit pl-1"></i></a>
-                                    <a role="button" class="btn-rama2" href="add_produk.php" >delete<i class="fa fa-trash pl-1"></i></a>
+                                  <td class="text-center iklan-dashboard">
+                                    <a role="button" class="btn btn-rama2" href="add_produk.php" >edit<i class="fa fa-edit pl-1 text-primary"></i></a>
+                                    <a role="button" class="btn btn-rama2" href="add_produk.php" >delete<i class="fa fa-trash pl-1 text-danger"></i></a>
                                 </td>
                                 </tr>
                             </tbody>
