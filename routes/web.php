@@ -15,6 +15,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // landing controller
+<<<<<<< HEAD
+Route::get('/','landing\HomeController@index')->name('landing.home');
+Route::get('/iklan','landing\AdvertiseController@index')->name('landing.advertise');
+Route::get('/iklan/detail', 'landing\AdvertiseController@show')->name('landing.advertise.detail');
+Route::get('/iklan/tambah', 'landing\UsersController@create')->name('landing.users.create');
+Route::get('/iklan/dashboard/{id}', 'landing\UsersController@dashboard')->name('landing.users.dashboard');
+Route::get('/forum/tambah', 'landing\UsersController@create_forum')->name('landing.users.create_forum');
+Route::get('/forum/dashboard/{id}', 'landing\UsersController@dashboard_forum')->name('landing.users.dashboard_forum');
+Route::get('/profile/{id}', 'landing\UsersController@profile')->name('landing.users.profile');
+Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
+Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
+Route::get('/produk/detail/{id}', 'landing\ProductController@show')->name('landing.product.detail');
+=======
 Route::get('/','Landing\HomeController@index')->name('landing.home');
 Route::get('/iklan','Landing\AdvertiseController@index')->name('landing.advertise');
 Route::get('/iklan_detail', 'Landing\AdvertiseController@show')->name('landing.advertise.detail');
@@ -23,9 +36,11 @@ Route::get('/iklan_dashboard_{id}', 'Landing\UsersController@dashboard')->name('
 Route::get('/forum_tambah', 'Landing\UsersController@create_forum')->name('landing.users.create_forum');
 Route::get('/forum_dashboard_{id}', 'Landing\UsersController@dashboard_forum')->name('landing.users.dashboard_forum');
 Route::get('/profile_{id}', 'Landing\UsersController@profile')->name('landing.users.profile');
+Route::patch('/profile/update{id}', 'Landing\UsersController@update')->name('landing.users.update');
 Route::get('/keranjang', 'Landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'Landing\ProductController@index')->name('landing.product');
 Route::get('/produk_detail', 'Landing\ProductController@show')->name('landing.product.detail');
+>>>>>>> e10aad8354d0aa802998c54b269e8b0bc0ea050c
 
 // forum 
 Route::get('/forum', 'Landing\ForumController@index')->name('landing.forum');
