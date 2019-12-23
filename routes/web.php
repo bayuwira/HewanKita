@@ -26,6 +26,7 @@ Route::get('/profile/{id}', 'landing\UsersController@profile')->name('landing.us
 Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
 Route::get('/produk/detail/{id}', 'landing\ProductController@show')->name('landing.product.detail');
+Route::patch('/profile/update{id}', 'Landing\UsersController@update')->name('landing.users.update');
 
 // forum 
 Route::get('/forum', 'Landing\ForumController@index')->name('landing.forum');

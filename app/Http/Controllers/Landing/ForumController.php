@@ -20,7 +20,8 @@ class ForumController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Forum'
+            'title' => 'Forum',
+            'forum' => Forum::paginate(10)
         ];
         
         return view($this->path.'index', $data);
