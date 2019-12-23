@@ -4,15 +4,25 @@ namespace App\Http\Controllers\Landing;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class AdvertiseController extends Controller
 {
     public function index()
     {
-        return view('landing.advertise.index');
+        $iklan = DB::table('produk_iklans')->paginate(4);
+        return view('landing.advertise.index',['iklan' => $iklan]);
     }
-    public function show()
+    public function show($id)
     {
-        return view('landing.advertise.show');
+        $data = [
+            'iklan_detail' => DB::table('produk_iklans')
+                                            ->join('users',  'produk_iklans.user_id', '=', 'users.id')
+                                            ->select('produk_iklans.*', 'users.name as nama_penjual')
+                                            ->where('.produk_iklans.slug',$id)
+                                            ->get(),
+            'hewan' => DB::table('produk_iklans')->limit(3)->get()
+        ];
+        return view('landing.advertise.show', $data);
     }
 }
