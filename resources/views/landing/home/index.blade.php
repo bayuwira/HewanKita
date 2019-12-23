@@ -1,24 +1,22 @@
 @extends('landing.app')
 @section('content')
-<header class="bg-middleware text-black-50">
+<section class="first-content bg-pink">
     <div class="container text-center header-container">
-        <h1 class="main-textcolor">SELAMAT DATANG HEWAN<span id="kita">KITA.COM</span></h1>
+        <h1 class="main-textcolor">SELAMAT DATANG HEWAN<span class="kita">KITA.COM</span></h1>
         <p class="lead main-textcolor">Sebuah Website yang menghubungkan anda dengan seluruh fauna di dunia !</p>
         <div class="row animal-header">
-            <a href=""><i class="fas fa-dog"></i></a>
-            <a href=""><i class="fas fa-cat"></i></a>
-            <a href=""><i class="fas fa-crow"></i></a>
-            <a href=""><i class="fas fa-fish"></i></a>
-            <a href=""><i class="fas fa-spider"></i></a>
-            <a href=""><i class="fas fa-otter"></i></a>
+            <i class="fas fa-dog"></i>  
+            <i class="fas fa-cat"></i>  
+            <i class="fas fa-crow"></i> 
+            <i class="fas fa-fish"></i> 
+            <i class="fas fa-spider"></i>   
+            <i class="fas fa-otter"></i>    
         </div>
     </div>
-</header>
+</section>
 <section id="pets-need">
     <div class="container">
-        <div class="second-textcolor text-center">
-            <h2 class="mb-5">MEREKA BUTUH KAMU</h2>
-        </div>
+        <h2 class="mb-3">Mereka sedang mebutuhkan bantuanmu!</h2>
         <div class="row text-center">
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
@@ -29,7 +27,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                    <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
+                    <a href="{{ Route('landing.advertise.detail', ['kontol']) }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +42,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail', ['kontol']) }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +56,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail', ['kontol']) }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
@@ -73,21 +71,19 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.advertise.detail') }}" class="btn btn-hewankita">SAYA MAU !</a>
+                        <a href="{{ Route('landing.advertise.detail', ['kontol']) }}" class="btn btn-hewankita">SAYA MAU !</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="text-center">
-            <a href="{{ Route('landing.advertise') }}" class="btn btn-mid mt-5">SAYA MAU YANG LAIN</a>
+            <a href="{{ Route('landing.advertise') }}" class="btn btn-hewankita mt-5">SAYA MAU YANG LAIN</a>
         </div>
     </div>
 </section>
 <section id="produk" class="bg-middleware">
     <div class="container">
-        <div class="second-textcolor text-center">
-            <h2 class="mb-5">PERLENGKAPAN HEWAN</h2>
-        </div>
+        <h2 class="mb-4">Segala kebutuhan perlengkapan peliharaanmu</h2>
         <div class="row text-center">
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card h-100">
@@ -98,7 +94,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                        <a href="{{ Route('landing.product.detail' ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +109,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                        <a href="{{ Route('landing.product.detail' ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
                     </div>
                 </div>
             </div>
@@ -127,7 +123,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                        <a href="{{ Route('landing.product.detail' ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
                     </div>
                 </div>
             </div>
@@ -142,22 +138,22 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                        <a href="{{ Route('landing.product.detail' ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="text-center">
-        <a href="{{ Route('landing.product') }}" class="btn btn-mid mt-5">SAYA BUTUH YANG LAIN</a>
+        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita mt-5">SAYA BUTUH YANG LAIN</a>
     </div>
 </section>
-<section id="forum" class="bg-middleware">
-    <div class="container">
-        <div class="second-textcolor text-center">
-            <h2 class="mb-5">Forum Terbaru</h2>
-        </div>
-        @if(!empty($forum))
+@if(!empty($forum))
+    <section id="forum" class="bg-middleware">
+        <div class="container">
+            <div class="second-textcolor text-center">
+                <h2 class="mb-5">Forum Terbaru</h2>
+            </div>
             @foreach ($forum as $item)
                 <div class="col-lg-4 col-sm-12 col-md-12 py-2">
                     <a href="#">
@@ -175,15 +171,22 @@
                     </a>
                 </div>
             @endforeach
-            <div class="text-center">
-                <a href="{{ Route('landing.forum') }}" class="btn btn-mid">Tampilkan Lebih Banyak</a>
+        </div>
+    </section>
+@endif
+<section class="bg-pink">
+    <div class="container">
+        <div class="row" style="align-items: center">
+            <div class="col-md-9">
+                <h3>AYO <span class="kita">DAFTAR</span>, <br>DAN IKLANKAN <span class="kita">PELIHARAANMU</span>!</h3>
             </div>
-        @else
-            <p class="text-center">Tidak ada forum</p>
-        @endif
+            <div class="col-md-3">
+                <a href="#" class="btn btn-hewankita">Daftar Sekarang Juga!</a>
+            </div>
+        </div>
     </div>
 </section>
-<section id="team">
+{{-- <section id="team" class="bg-pink">
     <div class="container">
         <div class="col-md-12 text-center">
             <h2>Tim Developer</h2>
@@ -280,5 +283,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

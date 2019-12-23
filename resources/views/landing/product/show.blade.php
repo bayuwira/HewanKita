@@ -4,81 +4,43 @@
         <div class="container">
             <div class="card">
                 <div class="row">
+                    @foreach($produk as $item)
                     <aside class="col-sm-5 border-right">
                         <article class="gallery-wrap">
                             <div class="img-big-wrap">
-                                <div> <a href="#"><img class="img-fluid" src="http://placehold.it/750x500"></a></div>
+                                <div> <a href="#"><img class="img-fluid" src={{ $item->photo_thumbnail }}></a></div>
                             </div> <!-- slider-product.// -->
-                            <div class="img-small-wrap">
-                                <div class="item-gallery"> <img class="img-fluid" src="http://placehold.it/750x500"> </div>
-                                <div class="item-gallery"> <img class="img-fluid" src="http://placehold.it/750x500"> </div>
-                                <div class="item-gallery"> <img class="img-fluid" src="http://placehold.it/750x500"> </div>
-                                <div class="item-gallery"> <img class="img-fluid" src="http://placehold.it/750x500"> </div>
-                            </div> <!-- slider-nav.// -->
                         </article> <!-- gallery-wrap .end// -->
                     </aside>
                     <aside class="col-sm-7">
                         <article class="card-body p-5">
-                            <h3 class="title mb-3">Original Version of Some product name</h3>
+                            <h3 class="title mb-3">{{ $item->nama }}</h3>
                             <p class="price-detail-wrap">
                                 <span class="price h3 text-warning">
-                                    <span class="currency">US $</span><span class="num">1299</span>
+                                    <span class="currency">RP </span><span class="num">{{ $item->harga_jual }}</span>
                                 </span>
-                                <span>/per kg</span>
                             </p> <!-- price-detail-wrap .// -->
                             <dl class="item-property">
-                                <dt>Description</dt>
+                                <dt>Deskripsi</dt>
                                 <dd>
-                                    <p>Here goes description consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco </p>
+                                    <p>{{ $item->deskripsi }} </p>
                                 </dd>
                             </dl>
                             <dl class="param param-feature">
-                                <dt>Model#</dt>
-                                <dd>12345611</dd>
-                            </dl> <!-- item-property-hor .// -->
-                            <dl class="param param-feature">
-                                <dt>Color</dt>
-                                <dd>Black and white</dd>
-                            </dl> <!-- item-property-hor .// -->
-                            <dl class="param param-feature">
-                                <dt>Delivery</dt>
-                                <dd>Russia, USA, and Europe</dd>
+                                <dt>Dikirim</dt>
+                                <dd>Seluruh dunia</dd>
                             </dl> <!-- item-property-hor .// -->
                             <hr>
                             <div class="row">
                                 <div class="col-sm-5">
                                     <dl class="param param-inline">
-                                        <dt>Quantity: </dt>
+                                        <dt>Jumlah: </dt>
                                         <dd>
                                             <select class="form-control form-control-sm" style="width:70px;">
-                                                <option> 1 </option>
-                                                <option> 2 </option>
-                                                <option> 3 </option>
+                                            @for($i = 1; $i <= $item->stok; $i++)
+                                                <option value="{{ $i }}"> {{ $i }} </option>
+                                            @endfor
                                             </select>
-                                        </dd>
-                                    </dl> <!-- item-property .// -->
-                                </div> <!-- col.// -->
-                                <div class="col-sm-7">
-                                    <dl class="param param-inline">
-                                        <dt>Size: </dt>
-                                        <dd>
-                                            <label class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                                    id="inlineRadio2" value="option2">
-                                                <span class="form-check-label">SM</span>
-                                            </label>
-                                            <label class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                                    id="inlineRadio2" value="option2">
-                                                <span class="form-check-label">MD</span>
-                                            </label>
-                                            <label class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                                    id="inlineRadio2" value="option2">
-                                                <span class="form-check-label">XXL</span>
-                                            </label>
                                         </dd>
                                     </dl> <!-- item-property .// -->
                                 </div> <!-- col.// -->
@@ -87,7 +49,8 @@
                             <a href="#" class="btn btn-lg btn-hewankita text-uppercase"> Beli sekarang </a>
                             <a href="{{ Route('landing.cart') }}" class="btn btn-lg btn-hewankita text-uppercase"> <i class="fas fa-shopping-cart"></i> </a>
                         </article> <!-- card-body.// -->
-                    </aside> <!-- col.// -->
+                    </aside>
+                    @endforeach <!-- col.// -->
                 </div> <!-- row.// -->
             </div> <!-- card.// -->
         </div>

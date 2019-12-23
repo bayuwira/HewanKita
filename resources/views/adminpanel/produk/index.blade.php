@@ -15,6 +15,10 @@
     </div>
 @endsection
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="card card-info card-outline">

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>{{ empty($title) ? '' : $title.' | ' }}HewanKita.com</title>
+	<title>{{ empty($title) ? '' : $title.' - ' }}HEWANKITA.COM ADMIN PANEL</title>
 	<link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 	@yield('css')

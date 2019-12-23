@@ -1,12 +1,24 @@
 body{
-    background-color: #FFD5D5;
+    color: #45454D;
 }
 
 section{
     padding: 30px 150px;
 }
 
-#kita{
+.bg-pink{
+    background-color: #fbe0ec;
+}
+
+.navbar-light{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+}
+
+.btn:hover{
+    color: #fff;
+}
+
+.kita{
     color: #FC7FB2;
 }
 
@@ -39,10 +51,10 @@ section{
 .searchbar{
     margin-bottom: auto;
     margin-top: auto;
-    height: 60px;
-    background-color: #FFD5D5   ;
+    background-color: #ffffff;
     border-radius: 30px;
-    padding: 10px;
+    padding: 5px;
+    border: 3px solid #FC7FB2;
 }
 
 .search_input{
@@ -51,13 +63,10 @@ section{
     outline: 0;
     background: none;
     width: 0;
-    caret-color:transparent;
     line-height: 40px;
     transition: width 0.4s linear;
     padding: 0 10px;
     width: 400px;
-    caret-color:red;
-    transition: width 0.4s linear;
 }
 
     /* .searchbar:hover > .search_input{
@@ -72,7 +81,13 @@ section{
     color: #45454D;
 }
 
+button:focus{
+    outline: none;
+}
+
 .search_icon{
+    outline: 0;
+    box-shadow: none;
     height: 40px;
     width: 40px;
     float: right;
@@ -82,11 +97,17 @@ section{
     border-radius: 50%;
     color:#45454D;
     text-decoration:none;
+    border: 2px solid #000;
 }
 
-.collapse a:hover{
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
     background-color: #FC7FB2;
+    color: #fff;
     border-radius: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #45454D
 }
 
 #pets-need h2{
@@ -94,7 +115,7 @@ section{
 }
 
 .btn-hewankita{
-    background-color: #FFD5D5;
+    background-color: #fbe0ec;
     border-radius: 50px;
     color: #45454D;
 }
@@ -129,7 +150,7 @@ section{
 
 .our-team{
     padding: 30px 0 40px;
-    background-color: #FFD5D5;
+    background-color: #fbe0ec;
     text-align: center;
     overflow: hidden;
     position: relative;
@@ -749,7 +770,7 @@ ul.mail-list li span.subtopic_description{
 }
 
 #table-iklan .btn-rama2{
-    background-color: #ffd5d5;
+    background-color: #fbe0ec;
     color: #45454d;
     margin-bottom: 1px;
 }
@@ -805,7 +826,7 @@ section{
 }
 
 .first-content{
-    padding-top: 150px;
+    padding-top: 130px;
 }
 /* profile */
 #section-profile{
@@ -846,6 +867,91 @@ section{
 
 .section-main{
     background-color: #fff1e9!important;
+}
+
+/* dashboard forum */
+#dashboard_forum{
+    padding: 100px 150px 20px 150px;
+}
+.section_main{
+    background-color: #fff1e9!important;
+}
+
+.btn-pink{
+    background-color: #fc7fb2;
+    color: white;
+}
+
+#table-forum .btn-status{
+    background-color: #38ab3e;
+    color: white;
+    margin-bottom: 1px;
+}
+#table-forum .btn-delete{
+    background-color: #cf2e25;
+    color: white;
+    margin-bottom: 1px;
+}
+
+#TambahButton{
+	width: 100%!important;
+}
+
+#searchbar{
+	padding: 2px;
+	border: 1px solid #fc7fb2;
+	border-radius: 10px;
+}
+.card .card-header{
+	background-color: #fc7fb2
+}
+
+.iklan-dashboard{
+    padding-left: 100px;
+}
+
+#bottom-row .card{
+	width: 100%!important;
+}
+#iklan-populer{
+	border: 1px solid #fc7fb2
+}
+#table-iklan{
+	color: #45454d;
+}
+
+.table-striped>thead>tr>th{
+	background-color: #fc7fb2
+}
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #f2c7d9;
+}
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+    background-color: #ebd3dd;
+}
+
+#table-forum .table-stripped>tbody>td{
+	text-align: center;
+}
+.action-forum{
+    padding-left: 150px;
+}
+
+/* create forum */
+#section-create-forum{
+    padding: 100px 150px 20px 150px;
+}
+.btn-pink{
+	width: 100%;
+	background-color: #fc7fb2;
+	color: white;
+	border: none;
+}
+
+.toast-top-right{
+    top: 90px
 }
 
 

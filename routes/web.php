@@ -15,18 +15,39 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // landing controller
+<<<<<<< HEAD
 Route::get('/','landing\HomeController@index')->name('landing.home');
 Route::get('/iklan','landing\AdvertiseController@index')->name('landing.advertise');
-Route::get('/iklan_detail', 'landing\AdvertiseController@show')->name('landing.advertise.detail');
-Route::get('/iklan_tambah', 'landing\UsersController@create')->name('landing.users.create');
-Route::get('/iklan_dashboard_{id}', 'landing\UsersController@dashboard')->name('landing.users.dashboard');
-Route::get('/profile_{id}', 'landing\UsersController@profile')->name('landing.users.profile');
+Route::get('/iklan/detail', 'landing\AdvertiseController@show')->name('landing.advertise.detail');
+Route::get('/iklan/tambah', 'landing\UsersController@create')->name('landing.users.create');
+Route::get('/iklan/dashboard/{id}', 'landing\UsersController@dashboard')->name('landing.users.dashboard');
+Route::get('/forum/tambah', 'landing\UsersController@create_forum')->name('landing.users.create_forum');
+Route::get('/forum/dashboard/{id}', 'landing\UsersController@dashboard_forum')->name('landing.users.dashboard_forum');
+Route::get('/profile/{id}', 'landing\UsersController@profile')->name('landing.users.profile');
 Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
-Route::get('/produk_detail', 'landing\ProductController@show')->name('landing.product.detail');
-Route::get('/forum', 'landing\ForumController@index')->name('landing.forum');
-Route::get('/forum_detail', 'landing\ForumController@show')->name('landing.forum.detail');
-Route::get('/forum_tambah', 'landing\ForumController@create')->name('landing.forum.create');
+Route::get('/produk/detail/{id}', 'landing\ProductController@show')->name('landing.product.detail');
+=======
+Route::get('/','Landing\HomeController@index')->name('landing.home');
+Route::get('/iklan','Landing\AdvertiseController@index')->name('landing.advertise');
+Route::get('/iklan_detail', 'Landing\AdvertiseController@show')->name('landing.advertise.detail');
+Route::get('/iklan_tambah', 'Landing\UsersController@create')->name('landing.users.create');
+Route::get('/iklan_dashboard_{id}', 'Landing\UsersController@dashboard')->name('landing.users.dashboard');
+Route::get('/forum_tambah', 'Landing\UsersController@create_forum')->name('landing.users.create_forum');
+Route::get('/forum_dashboard_{id}', 'Landing\UsersController@dashboard_forum')->name('landing.users.dashboard_forum');
+Route::get('/profile_{id}', 'Landing\UsersController@profile')->name('landing.users.profile');
+Route::patch('/profile/update{id}', 'Landing\UsersController@update')->name('landing.users.update');
+Route::get('/keranjang', 'Landing\CartController@index')->name('landing.cart');
+Route::get('/produk', 'Landing\ProductController@index')->name('landing.product');
+Route::get('/produk_detail', 'Landing\ProductController@show')->name('landing.product.detail');
+>>>>>>> e10aad8354d0aa802998c54b269e8b0bc0ea050c
+
+// forum 
+Route::get('/forum', 'Landing\ForumController@index')->name('landing.forum');
+Route::get('/forum/create', 'Landing\ForumController@create')->name('landing.forum.create')->middleware('auth');
+Route::post('/forum/store', 'Landing\ForumController@store')->name('landing.forum.store')->middleware('auth');
+Route::get('/forum/{id}/show', 'Landing\ForumController@show')->name('landing.forum.show');
+Route::post('/forum/{id}', 'Landing\ForumController@store_comment')->name('landing.forum.comment.store');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {
@@ -73,7 +94,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify' => true]);
 
 // Route::get('/siap', function () {

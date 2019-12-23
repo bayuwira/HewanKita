@@ -19,126 +19,30 @@
             <h2>Cari dibawah!</h2>
         </div>
         <div class="row text-center">
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
-                            necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">DETAIL</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">DETAIL</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
-                            necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">DETAIL</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">DETAIL</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">DETAIL</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">DETAIL</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">DETAIL</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail') }}" class="btn btn-hewankita">DETAIL</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row text-center">
+            @if(count($produk) === 0)
                 <div class="col-md-12">
-                    <div class="hk-pagination">
-                        <a href="#">«</a>
-                        <a href="#">1</a>
-                        <a href="#" class="active">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#">»</a>
-                    </div>
-                    <p>Total Pages (16). kamu berada di No.: 2</p>
+                    <p class="text-center">data kosong</p>
                 </div>
-            </div>
+            @else
+                @foreach($produk as $item)
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="{{ $item->photo_thumbnail }}" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $item->nama }}</h4>
+                                <p class="card-text">
+                                    {{ $item->deskripsi }}
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ Route('landing.product.detail',$item->slug) }}" class="btn btn-hewankita">DETAIL</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+        <div class="container">
+            {{ $produk->links() }}
         </div>
     </section>
 @endsection
