@@ -21,7 +21,7 @@ class ProductController extends Controller
     {
         $data = [
             'title' => 'Produk_detail',
-            'produk' => Produk::all()
+            'produk' => Produk::where('slug', '=', $id)->get()
         ];
         return view('landing.product.show',$data);
     }
