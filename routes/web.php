@@ -45,6 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
             'show'
         ]);
         //user
+        Route::get($urlAdmin.'/pengguna/data', 'Admin\PenggunaController@data')->name('adminpanel.pengguna.data');
         Route::resource($urlAdmin . '/pengguna', 'Admin\PenggunaController')->names([
             'index' => 'adminpanel.pengguna.index',
             'create' => 'adminpanel.pengguna.create',

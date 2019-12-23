@@ -23,8 +23,7 @@
                     <thead>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Harga</th>
-                        <th>Stok</th>
+                        <th>Email</th>
                         <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -37,20 +36,19 @@
 @section('js')
     <script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
-    {{-- <script>
+    <script>
         $(document).ready(function(){
             $('.datatables').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('adminpanel.produk.data') }}",
+                ajax: "{{ route('adminpanel.pengguna.data') }}",
                 columns: [
                     {'data': 'DT_RowIndex'},
-                    {'data': 'nama'},
-                    {'data': 'harga'},
-                    {'data': 'stok'},
+                    {'data': 'name'},
+                    {'data': 'email'},
                     {'data': 'aksi', orderable: false, searchable: false}
                 ]
             });
         });
-    </script> --}}
+    </script>
 @endsection
