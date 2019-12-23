@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Detailuser;
+use Yajra\DataTables\DataTables;
 use DB;
 class PenggunaController extends Controller
 {
@@ -85,12 +86,12 @@ class PenggunaController extends Controller
         try{
             $user = User::findorFail($id);
             $input = $request->validate([
-                'name'          => 'max:150|string|',
-                'email'         => 'max:150|string|unique:users,email',
-                'password'      => 'max:150|string|confirmed|min:6',
-                'alamat'        => 'max:150|string|',
-                'photo_thumbnail'     =>  'nullable|string|max:190',
-                'no_telp'             =>  'string'
+                'name'                  => 'max:150|string',
+                'email'                 => 'max:150|string',
+                'password'              => 'max:150|string|confirmed|min:6',
+                'alamat'                => 'max:150|string|',
+                'photo_thumbnail'       =>  'nullable|string|max:190',
+                'no_telp'               =>  'string'
             ]);
             $dataForUpdateDetailUser = [
                 'no_telp'             => $input['no_telp'],
@@ -114,8 +115,7 @@ class PenggunaController extends Controller
                 if(User::where('email', '=', $input['email'])->count() ==  0){
                     $dataForUpdateUser['email'] = $input['email'];
                 }else{
-                    return redirect()
-                    ->route('adminpanel.pengguna.edit', [$id])
+                    return back()->withInput()
                     ->with('toastr', toastr('Gagal menggunakan email', 'error'));
                 }
             }
@@ -125,9 +125,8 @@ class PenggunaController extends Controller
                 if(User::where('name', '=', $input['name'])->count() ==  0){
                     $dataForUpdateUser['name'] = $input['name'];
                 }else{
-                    return redirect()
-                    ->route('adminpanel.pengguna.edit', [$id])
-                    ->with('toastr', toastr('Gagal menambahkan nama', 'error'));
+                    return back()->withInput()
+                    ->with('toastr', toastr('Gagal menggunakan nama', 'error'));
                 }
             }
             $user->update($dataForUpdateUser);
@@ -138,14 +137,29 @@ class PenggunaController extends Controller
                 ->with('toastr', toastr('Berhasil mengubah data', 'success'));
         }catch(\Illuminate\Database\QueryException $e){
             DB::rollback();
-            dd($e);
                 return redirect()
                 ->route('adminpanel.pengguna.edit', [$id])
                 ->with('toastr', toastr('Gagal update data', 'error'));
         }
     }
     public function destroy($id){
-
+        DB::beginTransaction();
+        try {
+            $data = User::findorFail($id);
+            Detailuser::where('user_id','=',$id)->delete();
+            $data->delete();
+            
+            DB::commit();
+            return redirect()
+            ->route('adminpanel.pengguna.index')
+            ->with('toastr', toastr('Berhasil mengubah data', 'success'));
+            
+        } catch (\Illuminate\Database\QueryException $e) {
+            DB::rollback();
+            return redirect()
+            ->route('adminpanel.pengguna.edit', [$id])
+            ->with('toastr', toastr('Gagal update data', 'error'));
+        }
     }
     public function data(){
          $data = User::join('user_details', 'users.id', '=', 'user_details.user_id')
