@@ -43,7 +43,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ Route('landing.users.profile', [ Auth::user()->id]) }}"><i class="fas fa-users-cog"></i> Profile</a>
                         <a class="dropdown-item" href="{{ Route('landing.users.dashboard', [ Auth::user()->id]) }}"><i class="fas fa-folder-open"></i> Iklan-ku</a>
-                        <a class="dropdown-item" href="{{ Route('landing.users.dashboard_forum', [ Auth::user()->id]) }}"><i class="fas fa-newspaper"></i> Forum-ku</a>
+                        {{-- <a class="dropdown-item" href="{{ Route('landing.users.dashboard_forum', [ Auth::user()->id]) }}"><i class="fas fa-newspaper"></i> Forum-ku</a> --}}
                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Keluar</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

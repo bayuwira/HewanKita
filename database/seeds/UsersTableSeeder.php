@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        $user = DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin123#'),
@@ -19,6 +19,13 @@ class UsersTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
+
+        DB::table('user_details')->insert([
+            'user_id' => $user->id,
+            'no_telp' => '081222333444',
+            'alamat'  => 'Kampus Teknik Informatik',
+            'thumbnail' => NULL
+        ])
         // DB::table('users')->insert([
         //     'name' => 'test',
         //     'email' => 'test@gmail.com',

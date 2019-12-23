@@ -14,7 +14,7 @@
                             ">
                             <div style="justify-content: flex-start; align-items: center; display:flex">
                                 <div class="mr-3">
-                                    <img src="{{ url('storage/'.$user->detail->thumbnail) }}" class="user-image rounded-circle" style="height: 50px; width: 50px">
+                                    <img src="{{ empty($user->detail->thumbnail) ? asset('img/avatar.jpg') : url('storage/'.$user->detail->thumbnail) }}" class="user-image rounded-circle" style="height: 50px; width: 50px">
                                 </div>
                                 <div>
                                     <p class="mb-0 font-weight-normal">{{ $user->name }}</p>
@@ -35,6 +35,7 @@
                                         ->join('users', 'users.id', '=', 'forum_comments.user_id')
                                         ->join('user_details', 'user_details.user_id', '=', 'users.id')
                                         ->select('forum_comments.*', 'users.name', 'user_details.thumbnail')
+                                        ->orderBy('forum_comments.id', 'asc')
                                         ->get();
                     @endphp
                     @foreach($comments as $comment)
@@ -42,7 +43,7 @@
                             <div class="card-body">
                                 <div class="mb-4" style="justify-content: flex-start; align-items: center; display:flex">
                                     <div class="mr-3">
-                                        <img src="{{ url('storage/'.$user->detail->thumbnail) }}" class="user-image rounded-circle" style="height: 50px; width: 50px">
+                                        <img src="{{ empty($comment->thumbnail) ? asset('img/avatar.jpg') : url('storage/'.$comment->thumbnail) }}" class="user-image rounded-circle" style="height: 50px; width: 50px">
                                     </div>
                                     <div>
                                         <p class="mb-0 font-weight-normal">{{ $comment->name }}</p>

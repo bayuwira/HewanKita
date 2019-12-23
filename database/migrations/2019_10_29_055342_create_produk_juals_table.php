@@ -20,8 +20,8 @@ class CreateProdukJualsTable extends Migration
             $table->text('deskripsi');
             $table->string('photo_thumbnail');
             $table->string('no_telp', 15);
-            $table->string('harga_jual');
-            $table->string('harga_beli');
+            $table->bigIncrements('harga_jual');
+            $table->bigIncrements('harga_beli');
             $table->tinyInteger('diskon');
             $table->integer('stok');
             $table->bigInteger('produk_kategori_id')->unsigned();

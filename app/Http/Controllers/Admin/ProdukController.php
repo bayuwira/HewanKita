@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Yajra\DataTables\DataTables;
 use App\Produk;
 use App\ProdukKategori;
-use DB;
+use Illuminate\Support\Facades\DB;
 class ProdukController extends Controller
 {
     private $path = 'adminpanel.produk.';

@@ -17,7 +17,7 @@ class CreateUserDetailsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->string('no_telp', 15);
             $table->string('alamat');
-            $table->string('photo_thumbnail');
+            $table->string('photo_thumbnail')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });
