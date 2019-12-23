@@ -4,7 +4,12 @@ namespace App\Http\Controllers\Landing;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Iklan;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class IklanController extends Controller
 {
@@ -28,6 +33,71 @@ class IklanController extends Controller
 
     public function create()
     {
-        return view('landing.users.create');
+        $data = [
+            'title' => 'Buat Iklan Baru'
+        ];
+
+        return view('landing.iklan.create', $data);
+    }
+
+    public function store(Request $request){
+        DB::beginTransaction();
+        $lastFile = $request->thumbnail->store('images/iklan', 'public');
+
+        $valid = Validator::make($request->all(), [
+            'nama' => 'required|max:191',
+            'deskripsi' => 'required',
+            'no_telp' => 'required|min:5|max:15',
+            'alamat'    => 'required|max:191',
+            'thumbnail' => 'required|max:5120'
+        ], [
+            'nama.required' => 'Nama harus diisi',
+            'nama.max' => 'Nama maksimal 191 karakter',
+            'deskripsi.required' => 'Deskripsi harus diisi',
+            'no_telp.required' => 'No. Telepon harus diisi',
+            'no_telp.max' => 'No. Telepon maksimal 191 karakter',
+            'no_telp.min' => 'No. Telepon minimal 5 karakter',
+            'alamat.required' => 'Alamat harus diisi',
+            'alamat.max' => 'Alamat maksimal 191 karakter',
+            'thubmnail.required' => 'Thumbnail harus diisi'
+        ]);
+
+        if ($valid->fails()) {
+            $message = '';
+            foreach ($valid->errors()->all() as $error) {
+                $message .= $error . '<br>';
+            }
+            return redirect()->route('landing.forum.create')->with('toastr', toastr($message, 'warning'));
+        }
+        try {
+            $slug = substr(Str::slug($request->nama), 0, 191);
+
+            $checkSlug = Iklan::where('slug', '=', $slug)->count();
+            while ($checkSlug) {
+                $slug = substr($slug, 0, 186) . substr(hex2bin(openssl_random_pseudo_bytes(16)), 0, 5);
+                $checkSlug = Iklan::where('slug', '=', $slug)->count();
+            }
+
+            $dataForInsert = [
+                'nama' => $request->nama,
+                'konten' => $request->konten,
+                'slug'  => $slug,
+                'user_id' => Auth::user()->id
+            ];
+
+            Iklan::create($dataForInsert);
+
+            DB::commit();
+            return redirect()
+                ->route('landing.forum.show', [$slug])
+                ->with('toastr', toastr('Forum Anda berhasil dibuat', 'success'));
+        } catch (QueryException $e) {
+            DB::rollBack();
+
+            return redirect()
+                ->route('landing.forum.create')
+                ->with('toastr', toastr('Forum Anda gagal dibuat', 'error'));
+        }
+
     }
 }

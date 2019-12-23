@@ -20,7 +20,8 @@ Route::get('/','Landing\HomeController@index')->name('landing.home');
 // iklan
 Route::get('/iklan','Landing\IklanController@index')->name('landing.iklan');
 Route::get('/iklan/detail', 'Landing\IklanController@show')->name('landing.iklan.detail');
-Route::get('/iklan/tambah', 'Landing\IklanController@create')->name('landing.users.create');
+Route::get('/iklan/create', 'Landing\IklanController@create')->name('landing.iklan.create');
+Route::get('/iklan/store', 'Landing\IklanController@store')->name('landing.iklan.store');
 Route::get('/iklan/dashboard/{id}', 'Landing\UsersController@dashboard')->name('landing.users.dashboard');
 
 Route::get('/profile/{id}', 'Landing\UsersController@profile')->name('landing.users.profile');

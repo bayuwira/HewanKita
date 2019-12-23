@@ -33,7 +33,7 @@
                     <a class="nav-link" href="{{ Route('landing.forum')}}"> <i class="far fa-newspaper"></i> Forum</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ Route('landing.users.create')}}"> <i class="fas fa-camera"></i> Buat Iklan</a>
+                    <a class="nav-link" href="{{ Route('landing.iklan.create')}}"> <i class="fas fa-camera"></i> Buat Iklan</a>
                 </li>
                 <li class="nav-item dropdown-navbar">
                 @php

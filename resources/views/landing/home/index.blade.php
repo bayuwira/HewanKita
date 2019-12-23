@@ -16,121 +16,83 @@
 </section>
 <section id="pets-need">
     <div class="container">
-        <h2 class="mb-3">Mereka sedang mebutuhkan bantuanmu!</h2>
-        <div class="row text-center">
-        @foreach($hewan as $h)
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="{{$h->thumbnail}}" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">{{$h->nama}}</h4>
-                        <p class="card-text">{{$h->deskripsi}}</p>
+        <h2 class="mb-3 text-center">Mereka sedang mebutuhkan bantuanmu!</h2>
+        <div class="row">
+            @if(count($hewan) > 0)
+                @foreach($hewan as $h)
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="{{$h->thumbnail}}" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">{{$h->nama}}</h4>
+                                <p class="card-text">{{$h->deskripsi}}</p>
+                            </div>
+                            <div class="card-footer">
+                            <a href="{{ Route('landing.advertise.detail', $h->slug ) }}" class="btn btn-hewankita">SAYA MAU !</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                    <a href="{{ Route('landing.advertise.detail', $h->slug ) }}" class="btn btn-hewankita">SAYA MAU !</a>
-                    </div>
-                </div>
+                @endforeach
+            @else
+                <div class="col"><p class="text-center">Tidak ada data</p></div>
+            @endif
+        </div>
+        @if(count($hewan) > 0)
+            <div class="text-center">
+                <a href="{{ Route('landing.iklan') }}" class="btn btn-hewankita mt-5">SAYA MAU YANG LAIN</a>
             </div>
-        @endforeach
-        </div>
-        <div class="text-center">
-            <a href="{{ Route('landing.iklan') }}" class="btn btn-hewankita mt-5">SAYA MAU YANG LAIN</a>
-        </div>
+        @endif
     </div>
 </section>
 <section id="produk" class="bg-middleware">
     <div class="container">
-        <h2 class="mb-4">Segala kebutuhan perlengkapan peliharaanmu</h2>
+        <h2 class="mb-3 text-center">Segala kebutuhan perlengkapan peliharaanmu</h2>
         <div class="row text-center">
-        @foreach($produk as $p)
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-<<<<<<< HEAD
-                    <img class="card-img-top" src="{{$p->photo_thumbnail}}" alt="">
-=======
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Mencit</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
-                            necessitatibus neque.</p>
+            @if(count($produk) > 0)
+                @foreach($produk as $p)
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">Makanan Mencit</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                                    necessitatibus neque.</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Anjing</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-                            magni
-                            sapiente, tempore debitis beatae culpa natus architecto.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">Makanan Kelinci</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
-                            necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
->>>>>>> b2c4c2614c7bbc3317efac31790b8730efe8c8a9
-                    <div class="card-body">
-                        <h4 class="card-title">{{$p->nama}}</h4>
-                        <p class="card-text">{{$p->deskripsi}}</p>
-                    </div>
-                    <div class="card-footer">
-<<<<<<< HEAD
-                        <a href="{{ Route('landing.product.detail', $p->slug) }}" class="btn btn-hewankita">COBA LIHAT</a>
-=======
-                        <a href="{{ Route('landing.product.detail', ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
->>>>>>> b2c4c2614c7bbc3317efac31790b8730efe8c8a9
-                    </div>
-                </div>
-            </div>
-        @endforeach
+                @endforeach
+            @else
+                <div class="col"><p class="text-center">Tidak ada data</p></div>
+            @endif
         </div>
     </div>
-    <div class="text-center">
-        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita mt-5">SAYA BUTUH YANG LAIN</a>
-    </div>
+    @if(count($produk) > 0)
+        <div class="text-center">
+            <a href="{{ Route('landing.product') }}" class="btn btn-hewankita mt-5">SAYA BUTUH YANG LAIN</a>
+        </div>
+    @endif
 </section>
-@if(!empty($forum))
+@if(count($forum) > 0)
     <section id="forum" class="bg-middleware">
         <div class="container">
             <div class="second-textcolor text-center">
-                <h2 class="mb-5">Forum Terbaru</h2>
+                <h2 class="mb-3">Forum Terbaru</h2>
             </div>
             @foreach ($forum as $item)
                 <div class="col-lg-4 col-sm-12 col-md-12 py-2">
-                    <a href="#">
+                    <a href="{{ route('landing.forum.show', [$item->slug]) }}">
                         <div class="card">
                             <div class="card-body">
-                                <span class="badge mb-2 float-right" id="status-forum">Status Forum</span>
-                                <h5 class="card-title">Judul Forum</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Username yang post forum</h6>
-                                <p class="card-text">Konten Forum</p>
-                                <span class="card-text-jawaban"><i class="fa fa-comment"></i>Total jawaban</span>
+                                <span class="badge badge-{{ $item->status === 'terbuka' ? 'success' : ($item->status === 'tertutup' ? 'danger' : 'info')  }} mb-2 float-right" id="status-forum">{{ $item->status }}</span>
+                                <h5 class="card-title">{{ $item->judul }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ $item->user->name }}</h6>
+                                <p class="card-text">{{ strlen($item->konten) > 80 ? substr($item->konten, 0, 80).'...' : $item->konten }}</p>
+                                <span class="card-text-jawaban"><i class="fa fa-comment"></i> {{ count($item->comments) }}</span>
                                 <div class="white-space : pre"></div>
-                                <h8 class="card-subtitle my-2 text-muted">Tanggal Upload Forum</h6>
+                                <h6 class="card-subtitle my-2 text-muted">{{ date('d M Y H:i', strtotime($item->created_at)) }}</h6>
                             </div>
                         </div>
                     </a>
