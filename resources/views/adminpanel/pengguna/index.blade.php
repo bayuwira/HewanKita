@@ -27,8 +27,7 @@
                     <thead>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Harga</th>
-                        <th>Stok</th>
+                        <th>Email</th>
                         <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -46,12 +45,11 @@
             $('.datatables').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('adminpanel.produk.data') }}",
+                ajax: "{{ route('adminpanel.pengguna.data') }}",
                 columns: [
                     {'data': 'DT_RowIndex'},
-                    {'data': 'nama'},
-                    {'data': 'harga'},
-                    {'data': 'stok'},
+                    {'data': 'name'},
+                    {'data': 'email'},
                     {'data': 'aksi', orderable: false, searchable: false}
                 ]
             });

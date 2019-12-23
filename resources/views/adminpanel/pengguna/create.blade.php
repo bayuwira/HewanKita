@@ -74,6 +74,15 @@
                                 @endif
                             </div>
                             <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" value="{{old('email')}}">
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group">
                                 <label class="col-form-label">No. Telepon</label>
                                 <input type="tel" name="no_telp" class="form-control" placeholder="ex. 08xxxxxxxx"pattern="[0-9]{9,15}" value="{{ old('no_telp') }}">
                                 @if ($errors->has('no_telp'))
@@ -92,15 +101,6 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" name="username" class="form-control" value="{{old('username')}}">
-                                @if ($errors->has('username'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('username') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="form-group">
                                 <label>Password</label>
                                 <input type="Password" id="password-confirm" name="password" class="form-control" value="{{old('password')}}">
                                 @if ($errors->has('password'))
@@ -112,15 +112,6 @@
                             <div class="form-group">
                                 <label>Confirmation Password</label>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" name="email" class="form-control" value="{{old('email')}}">
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Thumbnail</label>

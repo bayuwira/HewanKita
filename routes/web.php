@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // landing controller
-
 Route::get('/','landing\HomeController@index')->name('landing.home');
 Route::get('/iklan','landing\AdvertiseController@index')->name('landing.advertise');
 Route::get('/iklan_detail_{id}', 'landing\AdvertiseController@show')->name('landing.advertise.detail');
@@ -26,7 +25,9 @@ Route::get('/forum_dashboard_{id}', 'landing\UsersController@dashboard_forum')->
 Route::get('/profile_{id}', 'landing\UsersController@profile')->name('landing.users.profile');
 Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
-Route::get('/produk_detail/{id}', 'landing\ProductController@show')->name('landing.product.detail');
+Route::get('/produk/detail/{id}', 'landing\ProductController@show')->name('landing.product.detail');
+Route::patch('/profile/update{id}', 'Landing\UsersController@update')->name('landing.users.update');
+
 // forum 
 Route::get('/forum', 'Landing\ForumController@index')->name('landing.forum');
 Route::get('/forum/create', 'Landing\ForumController@create')->name('landing.forum.create')->middleware('auth');
@@ -51,6 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
             'show'
         ]);
         //user
+        Route::get($urlAdmin.'/pengguna/data', 'Admin\PenggunaController@data')->name('adminpanel.pengguna.data');
         Route::resource($urlAdmin . '/pengguna', 'Admin\PenggunaController')->names([
             'index' => 'adminpanel.pengguna.index',
             'create' => 'adminpanel.pengguna.create',
@@ -82,4 +84,4 @@ Auth::routes(['verify' => true]);
 
 // Route::get('/siap', function () {
 //     return human_file_size(1024*1024);
-// });
+// });s
