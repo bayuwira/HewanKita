@@ -45,19 +45,19 @@
         </div>
         <div id="forum">
             <div class="row">
-                @if(!empty($forum))
+                @if(count($forum) > 0)
                     @foreach ($forum as $item)
                         <div class="col-lg-4 col-sm-12 col-md-12 py-2">
-                            <a href="#">
+                            <a href="{{ route('landing.forum.show', [$item->slug]) }}">
                                 <div class="card">
                                     <div class="card-body">
-                                        <span class="badge mb-2 float-right" id="status-forum">Status Forum</span>
-                                        <h5 class="card-title">Judul Forum</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">Username yang post forum</h6>
-                                        <p class="card-text">Konten Forum</p>
-                                        <span class="card-text-jawaban"><i class="fa fa-comment"></i>Total jawaban</span>
+                                        <span class="badge badge-{{ $item->status === 'terbuka' ? 'success' : ($item->status === 'tertutup' ? 'danger' : 'info')  }} mb-2 float-right" id="status-forum">{{ $item->status }}</span>
+                                        <h5 class="card-title">{{ $item->judul }}</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{ $item->user->name }}</h6>
+                                        <p class="card-text">{{ strlen($item->konten) > 80 ? substr($item->konten, 0, 80).'...' : $item->konten }}</p>
+                                        <span class="card-text-jawaban"><i class="fa fa-comment"></i> {{ count($item->comments) }}</span>
                                         <div class="white-space : pre"></div>
-                                        <h8 class="card-subtitle my-2 text-muted">Tanggal Upload Forum</h6>
+                                        <h6 class="card-subtitle my-2 text-muted">{{ date('d M Y H:i', strtotime($item->created_at)) }}</h6>
                                     </div>
                                 </div>
                             </a>
