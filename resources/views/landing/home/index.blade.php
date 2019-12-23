@@ -94,7 +94,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail' ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
+                        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail' ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
+                        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                             necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail' ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
+                        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                             sapiente, tempore debitis beatae culpa natus architecto.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ Route('landing.product.detail' ['product']) }}" class="btn btn-hewankita">COBA LIHAT</a>
+                        <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
                     </div>
                 </div>
             </div>

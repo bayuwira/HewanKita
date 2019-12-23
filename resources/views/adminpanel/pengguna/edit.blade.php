@@ -115,7 +115,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Thumbnail</label><br>
-                                @php($foto = !empty(old('photo_thumbnail')) ? old('photo_thumbnail') : $item->thumbnail)
+                                @php($foto = !empty(old('photo_thumbnail')) ? old('photo_thumbnail') : $item->photo_thumbnail)
                                 <img src="@if (!empty($foto)) {{ $foto }} @endif" id="photo_thumbnail_img" style="@if (empty($foto)) {{ 'display:none;' }} @else {{ 'display:block;' }} @endif max-width: 250px;margin-bottom: 15px;">
                                 <input type="hidden" id="photo_thumbnail_text" name="photo_thumbnail" value="{{ $foto }}">
                                 <button type="button" class="btn btn-warning btn-xs" id="photo_thumbnail">Browse server</button>
