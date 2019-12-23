@@ -20,21 +20,32 @@
         </div>
         <div class="container">
             <div class="row text-center">
-            @foreach($produk as $p)
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="{{$p->photo_thumbnail}}" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">{{$p->nama}}</h4>
-                            <p class="card-text">{{$p->deskripsi}}</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="{{ Route('landing.product.detail', $p->slug) }}" class="btn btn-hewankita">DETAIL</a>
-                        </div>
+                @if(count($produk) === 0)
+                    <div class="col-md-12">
+                        <p class="text-center">data kosong</p>
                     </div>
-                </div>
-            @endforeach
+                @else
+                    @foreach($produk as $item)
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img class="card-img-top" src="{{ $item->photo_thumbnail }}" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ $item->nama }}</h4>
+                                    <p class="card-text">
+                                        {{ $item->deskripsi }}
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="{{ Route('landing.product.detail', $item->slug) }}" class="btn btn-hewankita">DETAIL</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </div>
+        </div>
+        <div class="container">
+            {{ $produk->links() }}
         </div>
     </section>
 @endsection

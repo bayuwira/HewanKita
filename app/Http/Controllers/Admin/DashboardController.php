@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -12,6 +13,7 @@ class DashboardController extends Controller
         $data = [
             'title' => 'Dashboard'
         ];
-        return view('adminpanel.dashboard.index');
+                
+        return view('adminpanel.dashboard.index', $data);
     }
 }

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // landing controller
+
 Route::get('/','landing\HomeController@index')->name('landing.home');
 Route::get('/iklan','landing\AdvertiseController@index')->name('landing.advertise');
 Route::get('/iklan_detail_{id}', 'landing\AdvertiseController@show')->name('landing.advertise.detail');
@@ -25,17 +26,15 @@ Route::get('/forum_dashboard_{id}', 'landing\UsersController@dashboard_forum')->
 Route::get('/profile_{id}', 'landing\UsersController@profile')->name('landing.users.profile');
 Route::get('/keranjang', 'landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'landing\ProductController@index')->name('landing.product');
-Route::get('/produk_detail_{id}', 'landing\ProductController@show')->name('landing.product.detail');
-
+Route::get('/produk_detail/{id}', 'landing\ProductController@show')->name('landing.product.detail');
 // forum 
-Route::get('/forum', 'landing\ForumController@index')->name('landing.forum');
-Route::get('/forum/{id}', 'landing\ForumController@show')->name('landing.forum.detail');
+Route::get('/forum', 'Landing\ForumController@index')->name('landing.forum');
+Route::get('/forum/create', 'Landing\ForumController@create')->name('landing.forum.create')->middleware('auth');
+Route::post('/forum/store', 'Landing\ForumController@store')->name('landing.forum.store')->middleware('auth');
+Route::get('/forum/{id}/show', 'Landing\ForumController@show')->name('landing.forum.show');
+Route::post('/forum/{id}', 'Landing\ForumController@store_comment')->name('landing.forum.comment.store');
 
 Route::group(['middleware' => ['auth']], function () {
-    // forum
-    Route::get('/forum/create', 'landing\ForumController@create')->name('landing.forum.create');
-    Route::post('/forum/store', 'landing\ForumController@store')->name('landing.forum.store');
-
     Route::group(['middleware' => ['checkroleuserlogin:1']], function () {
         $urlAdmin = '/control-panel';
         //produk jual
