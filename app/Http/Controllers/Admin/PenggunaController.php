@@ -5,16 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Hash;
 use App\Detailuser;
 use DB;
-=======
-use App\UserDetail;
-use Illuminate\Support\Facades\DB;
-use Yajra\DataTables\Facades\DataTables;
-
->>>>>>> 0f3a6a92cd5b1eeaaa16e279644c0990d740f523
 class PenggunaController extends Controller
 {
     private $path = 'adminpanel.pengguna.';
@@ -74,11 +67,7 @@ class PenggunaController extends Controller
 
             $user = User::create($dataForInsertUser);
             $dataForInsertDetailUser['user_id'] = $user->id;
-<<<<<<< HEAD
             Detailuser::create($dataForInsertDetailUser);
-=======
-            UserDetail::create($dataForInsertDetailUser);
->>>>>>> 0f3a6a92cd5b1eeaaa16e279644c0990d740f523
             DB::commit();
             return redirect()
                 ->route('adminpanel.pengguna.create')
@@ -158,7 +147,6 @@ class PenggunaController extends Controller
     public function destroy($id){
 
     }
-<<<<<<< HEAD
     public function data(){
          $data = User::join('user_details', 'users.id', '=', 'user_details.user_id')
                         ->where('users.hak_akses', '=', '1')
@@ -179,10 +167,5 @@ class PenggunaController extends Controller
                 })
                 ->rawColumns(['aksi'])
                 ->make();
-=======
-
-    public function data(){
-        return DataTables::of(User::all());
->>>>>>> 0f3a6a92cd5b1eeaaa16e279644c0990d740f523
     }
 }
