@@ -10,11 +10,11 @@
                     <div class="row">
                     @foreach($iklan_detail as $iklan)
                         <div class="col-md-8">
-                            <img class="img-fluid" src="{{$iklan->thumbnail}}" alt="">
+                            <img class="img-fluid" src="{{ url('storage/',$iklan->thumbnail) }}" alt="">
                         </div>
                         <div class="col-md-4">
                             <h1 class="my-3">{{$iklan->nama}}</h1>
-                            <h4>{{$iklan->lokasi}}</h4>
+                            <h4>{{$iklan->alamat}}</h4>
                             <button type="button" class="btn btn-hubungi" data-toggle="modal" data-target="#exampleModalCenter" >Hubungi Penjual</button>
                         </div>
                         <!-- Modal -->
@@ -51,12 +51,12 @@
                     </div>
                 </div>
                 <div class="col-md-2 recomendation-container">
-                @foreach($hewan as $h)
                     <h4>Lihat Ini Juga</h4>
-                    <div class="recomendation">
-                        <a href="{{ Route('landing.advertise.detail',['a'])}}"> <img class="img-fluid" src="{{$h->thumbnail}}" alt=""></a>    
-                    </div>
-                @endforeach
+                    @foreach($hewan as $h)
+                        <div class="recomendation">
+                            <a href="{{ Route('landing.iklan.show',[$h->slug])}}"> <img class="img-fluid" src="{{$h->thumbnail}}" alt=""></a>    
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

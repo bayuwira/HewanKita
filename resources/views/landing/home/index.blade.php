@@ -59,6 +59,9 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">{{ $p->nama }}</h4>
+                                <h5 class="card-text price">
+                                    {{ 'Rp '.number_format($p->harga_jual, 0, 0, '.') }}
+                                </h5>
                                 <p class="card-text">{!! $p->deskripsi !!}</p>
                             </div>
                             <div class="card-footer">

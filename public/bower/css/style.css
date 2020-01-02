@@ -757,6 +757,10 @@ ul.mail-list li span.subtopic_description{
     display: block;
 }
 
+.price{
+    color: #FC7FB2 !important;
+}
+
 #img-upload-rama{
     width: 100%;
     height: 250px;
