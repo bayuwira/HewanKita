@@ -22,13 +22,15 @@
                 @foreach($hewan as $h)
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="card h-100">
-                            <img class="card-img-top" src="{{$h->thumbnail}}" alt="">
+                            <div class="card-img-top">
+                                <img class="img-fluid" src="{{ url('storage/', $h->thumbnail) }}">
+                            </div>
                             <div class="card-body">
-                                <h4 class="card-title">{{$h->nama}}</h4>
-                                <p class="card-text">{{$h->deskripsi}}</p>
+                                <h4 class="card-title">{{ $h->nama }}</h4>
+                                <p class="card-text">{{ $h->deskripsi }}</p>
                             </div>
                             <div class="card-footer">
-                            <a href="{{ Route('landing.advertise.detail', $h->slug ) }}" class="btn btn-hewankita">SAYA MAU !</a>
+                                <a href="{{ Route('landing.iklan.show', $h->slug ) }}" class="btn btn-hewankita">SAYA MAU !</a>
                             </div>
                         </div>
                     </div>
@@ -47,19 +49,20 @@
 <section id="produk" class="bg-middleware">
     <div class="container">
         <h2 class="mb-3 text-center">Segala kebutuhan perlengkapan peliharaanmu</h2>
-        <div class="row text-center">
+        <div class="row">
             @if(count($produk) > 0)
                 @foreach($produk as $p)
                     <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                        <div class="card">
+                            <div class="card-img-top">
+                                <img class="img-fluid" src="{{ $p->photo_thumbnail }}">
+                            </div>
                             <div class="card-body">
-                                <h4 class="card-title">Makanan Mencit</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
-                                    necessitatibus neque.</p>
+                                <h4 class="card-title">{{ $p->nama }}</h4>
+                                <p class="card-text">{!! $p->deskripsi !!}</p>
                             </div>
                             <div class="card-footer">
-                                <a href="{{ Route('landing.product') }}" class="btn btn-hewankita">COBA LIHAT</a>
+                                <a href="{{ Route('landing.product.detail', [$p->slug]) }}" class="btn btn-hewankita">COBA LIHAT</a>
                             </div>
                         </div>
                     </div>
@@ -86,7 +89,7 @@
                     <a href="{{ route('landing.forum.show', [$item->slug]) }}">
                         <div class="card">
                             <div class="card-body">
-                                <span class="badge badge-{{ $item->status === 'terbuka' ? 'success' : ($item->status === 'tertutup' ? 'danger' : 'info')  }} mb-2 float-right" id="status-forum">{{ $item->status }}</span>
+                                <span class="text-white badge badge-{{ $item->status === 'terbuka' ? 'success' : ($item->status === 'tertutup' ? 'danger' : 'info')  }} mb-2 float-right" id="status-forum">{{ ucfirst($item->status) }}</span>
                                 <h5 class="card-title">{{ $item->judul }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $item->user->name }}</h6>
                                 <p class="card-text">{{ strlen($item->konten) > 80 ? substr($item->konten, 0, 80).'...' : $item->konten }}</p>

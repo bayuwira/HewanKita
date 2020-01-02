@@ -74,14 +74,13 @@
                 <div class="card ">
                     <div class="card-body">
                         <h5 class="card-title">Forum Lainnya</h5>
-                        <a href="#"><h6 class="card-text forum-lain">Judul Forum Lain</h6></a>
-                        <a href="#"><h6 class="card-text forum-lain">Judul Forum Lain</h6></a>
-                        <a href="#"><h6 class="card-text forum-lain">Judul Forum Lain</h6></a>
-                        <a href="#"><h6 class="card-text forum-lain">Judul Forum Lain</h6></a>
-                        <a href="#"><h6 class="card-text forum-lain">Judul Forum Lain</h6></a>
-                        <a href="#"><h6 class="card-text forum-lain">Judul Forum Lain</h6></a>
-                        <a href="#"><h6 class="card-text forum-lain">Judul Forum Lain</h6></a>
-                        <a href="#"><h6 class="card-text forum-lain">Judul Forum Lain</h6></a>
+                        @if(count($forum_lain))
+                            @foreach($forum_lain as $item)
+                                <a href="{{ route('landing.forum.show', [$item->slug]) }}"><h6 class="card-text forum-lain">{{ $item->judul }}</h6></a>
+                            @endforeach
+                        @else
+                            <p class="mb-0">Tidak ada forum lain tersedia</p>
+                        @endif
                     </div>
                 </div>
             </div>

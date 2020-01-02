@@ -8,6 +8,7 @@ use App\Iklan;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -28,7 +29,7 @@ class IklanController extends Controller
                                             ->get(),
             'hewan' => DB::table('produk_iklans')->limit(3)->get()
         ];
-        return view('landing.advertise.show', $data);
+        return view('landing.iklan.show', $data);
     }
 
     public function create()
@@ -42,7 +43,7 @@ class IklanController extends Controller
 
     public function store(Request $request){
         DB::beginTransaction();
-        $lastFile = $request->thumbnail->store('images/iklan', 'public');
+        $lastFile = $request->file('thumbnail')->store('images/iklan', 'public');
 
         $valid = Validator::make($request->all(), [
             'nama' => 'required|max:191',
@@ -67,20 +68,23 @@ class IklanController extends Controller
             foreach ($valid->errors()->all() as $error) {
                 $message .= $error . '<br>';
             }
-            return redirect()->route('landing.forum.create')->with('toastr', toastr($message, 'warning'));
+            return redirect()->route('landing.iklan.create')->with('toastr', toastr($message, 'warning'));
         }
         try {
             $slug = substr(Str::slug($request->nama), 0, 191);
 
             $checkSlug = Iklan::where('slug', '=', $slug)->count();
             while ($checkSlug) {
-                $slug = substr($slug, 0, 186) . substr(hex2bin(openssl_random_pseudo_bytes(16)), 0, 5);
+                $slug = substr($slug, 0, 186) . substr(bin2hex(openssl_random_pseudo_bytes(16)), 0, 5);
                 $checkSlug = Iklan::where('slug', '=', $slug)->count();
             }
-
+            
             $dataForInsert = [
                 'nama' => $request->nama,
-                'konten' => $request->konten,
+                'deskripsi' => $request->deskripsi,
+                'no_telp'  => $request->no_telp,
+                'alamat'  => $request->alamat,
+                'thumbnail' => $lastFile,
                 'slug'  => $slug,
                 'user_id' => Auth::user()->id
             ];
@@ -89,14 +93,15 @@ class IklanController extends Controller
 
             DB::commit();
             return redirect()
-                ->route('landing.forum.show', [$slug])
+                ->route('landing.iklan.show', [$slug])
                 ->with('toastr', toastr('Forum Anda berhasil dibuat', 'success'));
         } catch (QueryException $e) {
+            Storage::delete($lastFile);
             DB::rollBack();
 
             return redirect()
-                ->route('landing.forum.create')
-                ->with('toastr', toastr('Forum Anda gagal dibuat', 'error'));
+                ->route('landing.iklan.create')
+                ->with('toastr', toastr($e->getMessage(), 'error'));
         }
 
     }

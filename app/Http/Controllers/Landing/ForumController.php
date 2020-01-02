@@ -57,7 +57,7 @@ class ForumController extends Controller
             
             $checkSlug = Forum::where('slug', '=', $slug)->count(); 
             while($checkSlug){
-                $slug = substr($slug, 0, 186) . substr(hex2bin(openssl_random_pseudo_bytes(16)), 0, 5);
+                $slug = substr($slug, 0, 186) . substr(bin2hex(openssl_random_pseudo_bytes(16)), 0, 5);
                 $checkSlug = Forum::where('slug', '=', $slug)->count();
             }
 
@@ -87,12 +87,14 @@ class ForumController extends Controller
     {
         $forum = Forum::where('slug', '=', $id)
                         ->firstOrFail();
+        $forumLain = Forum::inRandomOrder(10)->where('id', '!=', $forum->id)->get();
         $user = User::where('id', '=', $forum->user_id)
                         ->firstOrFail();
 
         $data = [
             'title' => $forum->judul.' - Lihat Forum',
             'forum' => $forum,
+            'forum_lain' => $forumLain,
             'user'  => $user
         ];
 

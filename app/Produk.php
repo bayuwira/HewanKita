@@ -21,7 +21,7 @@ class Produk extends Model
         'diskon',
         'stok',
         'kondisi',
-        'produk_kategori_id'
+        'produk_kategori_id',
     ];
 
 }

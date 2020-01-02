@@ -5,7 +5,7 @@
             <div class="second-textcolor text-center">
                 <h2>BUAT IKLAN</h2>
             </div>
-            <form action="{{ route('landing.iklan.store') }}" method="POST">
+            <form action="{{ route('landing.iklan.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
                 <div class="row px-3 py-3">
@@ -15,7 +15,7 @@
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <span class="btn btn-rama btn-file-rama">
-                                            Browse… <input type="file" name="thubmnail">
+                                            Browse… <input type="file" name="thumbnail">
                                         </span>
                                     </span>
                                     <input type="text" class="form-control" readonly>
@@ -54,28 +54,19 @@
 
 @endsection
 @section('js')
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
     $(document).ready( function() {
         $(document).on('change', '.btn-file-rama :file', function() {
-        var input = $(this),
-            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-            input.trigger('fileselect', [label]);
+            var elem = $(this)[0];
+
+            if(elem.files[0]){
+                readURL(elem);
+                $(this).parent().parent().parent().find(':text').val(elem.files[0].name);
+            }else{
+                toastr.warning('Tidak ada file yang dimasukan');
+            }
         });
 
-        $('.btn-file-rama :file').on('fileselect', function(event, label) {
-            var input = $(this).parents('.input-group').find(':text'),
-                log = label;
-            
-            if( input.length ) {
-                input.val(log);
-            } else {
-                if( log ) alert(log);
-            }
-        
-        });
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -86,11 +77,7 @@
                 
                 reader.readAsDataURL(input.files[0]);
             }
-        }
-
-        $("#imgInp").change(function(){
-            readURL(this);
-        });     
+        }   
     });
     </script>
     <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>

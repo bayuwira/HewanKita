@@ -762,6 +762,10 @@ ul.mail-list li span.subtopic_description{
     height: 250px;
 }
 
+.card-img-top{
+    height: 150px;
+    overflow: hidden;
+}
 
 /* dashboard - user - advertise*/
 .btn-rama2{

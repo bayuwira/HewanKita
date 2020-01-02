@@ -18,7 +18,8 @@
     @include('landing.partial.footer')
 
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
-    <link href="{{ asset('bower/vendor/bootstrap/js/bootstrap.min.js') }}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="{{ asset('adminlte/plugins/toastr/toastr.min.js') }}"></script>
     @yield('js')
     <script type="text/javascript">
