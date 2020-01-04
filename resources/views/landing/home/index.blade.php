@@ -27,7 +27,7 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">{{ $h->nama }}</h4>
-                                <p class="card-text">{{ $h->deskripsi }}</p>
+                                <p class="card-text">{{ strlen($h->deskripsi) > 80 ? substr($h->deskripsi, 0, 80).'...' : $h->deskripsi }}</p>
                             </div>
                             <div class="card-footer">
                                 <a href="{{ Route('landing.iklan.show', $h->slug ) }}" class="btn btn-hewankita">SAYA MAU !</a>
@@ -62,7 +62,7 @@
                                 <h5 class="card-text price">
                                     {{ 'Rp '.number_format($p->harga_jual, 0, 0, '.') }}
                                 </h5>
-                                <p class="card-text">{!! $p->deskripsi !!}</p>
+                                <p class="card-text">{{ strlen($p->deskripsi) > 80 ? substr($p->deskripsi, 0, 80).'...' : $p->deskripsi }}</p>
                             </div>
                             <div class="card-footer">
                                 <a href="{{ Route('landing.product.detail', [$p->slug]) }}" class="btn btn-hewankita">COBA LIHAT</a>
