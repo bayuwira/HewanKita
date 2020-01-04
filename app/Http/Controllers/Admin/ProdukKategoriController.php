@@ -113,7 +113,8 @@ class ProdukKategoriController extends Controller
         try {
             $item = ProdukKategori::where('slug', '=', $id)->firstOrFail();
             $input = $request->validate([
-                'nama'          => 'string|max:190|required|unique:produk_kategoris,nama',
+                'nama'          => 'string|max:190|required',
+                'icon'          => 'string|max:190'
             ]);
 
             $input['slug'] = substr(str_slug($input['nama'], '-'), 0, 190);
@@ -121,11 +122,20 @@ class ProdukKategoriController extends Controller
             $dataForUpdateKategoriProduk = [
                 'nama'      => $input['nama'],
                 'slug'		=> $input['slug'],
+                'icon'      => $input['icon']
             ];
+            if($item->nama!=$input['nama']){
+                if(ProdukKategori::where('nama', '=', $input['nama'])->count() ==  0){
+                    $dataForUpdateKategoriProduk['nama'] = $input['nama'];
+                }else{
+                    return back()->withInput()
+                    ->with('toastr', toastr('Gagal menggunakan nama', 'error'));
+                }
+            }
             $item->update($dataForUpdateKategoriProduk);
             DB::commit();
             return redirect()
-                ->route('adminpanel.kategori.produk.index', [$item->slug])
+                ->route('adminpanel.kategori.produk.index')
                 ->with('toastr', toastr('Berhasil mengubah data', 'success'));
         } catch (\Illuminate\Database\QueryException $e) {
             DB::rollback();
@@ -174,7 +184,7 @@ class ProdukKategoriController extends Controller
                         ";
                 })
                 ->editColumn('icon', function($data){
-                    return '<i class="'.$data['icon'].'"></i>';
+                    return '<i class="fas '.$data['icon'].'"></i>';
                 })
                 ->rawColumns(['aksi', 'icon'])
                 ->make();

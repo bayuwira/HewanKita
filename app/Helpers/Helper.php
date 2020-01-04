@@ -1,4 +1,6 @@
+
 <?php
+use Illuminate\Contracts\Cookie\Factory as CookieFactory;
 // if (!function_exists('human_file_size')) {
 //     function human_file_size($bytes, $decimals = 2)
 //     {
@@ -47,5 +49,31 @@ if(!function_exists('KondisiProduk')){
         if(empty($str))
             return $arr;
         else return $arr[$str];
+    }
+}
+if (! function_exists('cookie')) {
+    /**
+     * Create a new cookie instance.
+     *
+     * @param  string|null  $name
+     * @param  string|null  $value
+     * @param  int  $minutes
+     * @param  string|null  $path
+     * @param  string|null  $domain
+     * @param  bool  $secure
+     * @param  bool  $httpOnly
+     * @param  bool  $raw
+     * @param  string|null  $sameSite
+     * @return \Illuminate\Cookie\CookieJar|\Symfony\Component\HttpFoundation\Cookie
+     */
+    function cookie($name = null, $value = null, $minutes = 0, $path = null, $domain = null, $secure = false, $httpOnly = true, $raw = false, $sameSite = null)
+    {
+        $cookie = app(CookieFactory::class);
+
+        if (is_null($name)) {
+            return $cookie;
+        }
+
+        return $cookie->make($name, $value, $minutes, $path, $domain, $secure, $httpOnly, $raw, $sameSite);
     }
 }

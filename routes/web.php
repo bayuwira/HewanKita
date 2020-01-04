@@ -25,10 +25,12 @@ Route::post('/iklan/store', 'Landing\IklanController@store')->name('landing.ikla
 Route::get('/iklan/{id}', 'Landing\UsersController@dashboard')->name('landing.iklan.dashboard');
 
 Route::get('/profile/{id}', 'Landing\UsersController@profile')->name('landing.users.profile');
-Route::get('/keranjang', 'Landing\CartController@index')->name('landing.cart');
+// Route::get('/keranjang', 'Landing\CartController@index')->name('landing.cart');
 Route::get('/produk', 'Landing\ProductController@index')->name('landing.product');
 Route::get('/produk/detail/{id}', 'Landing\ProductController@show')->name('landing.product.detail');
 Route::patch('/profile/update{id}', 'Landing\UsersController@update')->name('landing.users.update');
+
+//keranjang
 
 // forum 
 Route::get('/forum', 'Landing\ForumController@index')->name('landing.forum');
@@ -78,6 +80,19 @@ Route::group(['middleware' => ['auth']], function () {
             'show'
         ]);
     });
+    Route::post('/keranjang/store', 'Landing\CartController@store')->name('landing.cart.store');
+    Route::get('/keranjang', 'Landing\CartController@index')->name('landing.cart.index');
+    // Route::post('/keranjang/update', 'Landing\CartController@updateCart')->name('landing.update_cart');
+    
+    // Route::get('/checkout', 'Landing\CheckoutController@checkout')->name('landing.cart.index');
+    // Route::delete('/checkout/{id}', 'Landing\CheckoutController@destroy')->name('landing.cart.destroy');
+    // Route::get('/checkout/store','Landing\CheckoutController@store')->name('landing.cart.store');
+    //Route::post('/checkout', 'Landing\CheckoutController@processCheckout')->name('landing.store_checkout');
+    //Route::get('/checkout/{invoice}', 'Landing\CheckoutController@checkoutFinish')->name('landing.finish_checkout');
+    
+    // Route::group(['middleware' => 'checkroleuserlogin:2'], function () {
+        
+	// });
 });
 
 Auth::routes();

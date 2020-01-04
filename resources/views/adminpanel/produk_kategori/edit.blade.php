@@ -68,6 +68,10 @@
                                 <label>Nama Kategori Produk</label>
                                 <input type="text" class="form-control" name="nama"  placeholder="" value="{{ empty(old('nama')) ? $item->nama : old('nama') }}" >
                             </div>
+                            <div class="form-group">
+                                <label>Icon</label>
+                                <input type="text" class="form-control" name="icon"  placeholder="ex. fa-users" value="{{ empty(old('icon')) ? $item->icon : old('icon') }}" >
+                            </div>
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>

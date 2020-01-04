@@ -21,8 +21,9 @@ class ProductController extends Controller
     {
         $data = [
             'title' => 'Produk_detail',
-            'produk' => Produk::where('slug', '=', $id)->get()
+            'produk' => Produk::where('slug', '=', $id)->firstOrFail()
         ];
+        
         return view('landing.product.show',$data);
     }
 }
